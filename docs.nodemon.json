@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "docs_assets/",
+    "interfaces/",
+    "mixins/",
+    "models/",
+    "tutorials/"
+  ],
+  "ext": "css,js,json,md",
+  "exec": "npm run docs"
+}

@@ -1,0 +1,41 @@
+{
+  "slackBot": {
+    "token": "SLACK-TOKEN",
+    "botToken": "SLACK-BOT-TOKEN",
+    "verificationToken": "SLACK-VERIFICATION-TOKEN",
+    "slashCommandUri": "SLACK-SLASH-COMMAND-URI",
+    "optionsLoadUri": "SLACK-OPTIONS-LOAD-URI",
+    "interactiveUri": "SLACK-INTERACTIVE-URI"
+  },
+  "github/repo": {
+    "owner": "GITHUB-REPO-OWNER",
+    "name": "GITHUB-REPO-NAME",
+    "user": "GITHUB-USER",
+    "token": "GITHUB-TOKEN",
+    "defaultBranch": "GITHUB-DEFAULT-BRANCH",
+    "webhookUri": "GITHUB-WEBHOOK-URI",
+    "webhookSecret": "GITHUB-WEBHOOK-SECRET"
+  },
+  "jenkins": {
+    "token": "JENKINS-TOKEN",
+    "user": "JENKINS-USER",
+    "protocol": "http",
+    "url": "localhost",
+    "port": 8080,
+    "csrfProtection": false,
+    "notifyUri": "JENKINS-NOTIFY-URI"
+  },
+  "aws-s3": {
+    "accessKeyId": "AWS-ACCESS-KEY-ID",
+    "secretAccessKey": "AWS-SECRET-ACCESS-KEY",
+    "bucket": "AWS-BUCKET"
+  },
+  "webServer": {
+    "port": "12345",
+    "pfx": "./config/test.pkcs12",
+    "passphrase": "passphrase"
+  },
+  "log": {
+    "path": "./log"
+  }
+}

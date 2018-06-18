@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "actions": [
+        {
+          "causes": [
+            {
+              "shortDescription": "Started by user anonymous",
+              "userId": null,
+              "userName": "anonymous"
+            }
+          ]
+        }
+      ],
+      "blocked": true,
+      "buildable": false,
+      "buildableStartMilliseconds": 1389418977387,
+      "id": 20,
+      "inQueueSince": 1389418977358,
+      "params": "",
+      "stuck": false,
+      "task": {
+        "color": "blue_anime",
+        "name": "example",
+        "url": "http://localhost:8080/job/example/"
+      },
+      "url": "queue/item/20/",
+      "why": "Build #2 is already in progress (ETA:N/A)"
+    }
+  ]
+}

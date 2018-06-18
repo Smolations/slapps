@@ -1,0 +1,90 @@
+// slash command is processed and this is nectar's reaction:
+
+// const selectOpts = subscriber.jobs.map((job) => {
+//   return { text: job.name, value: job.name };
+// });
+// const attachments = [
+//   {
+//     text: 'Choose a job',
+//     fallback: 'Loading jobs...',
+//     color: '#3AA3E3',
+//     attachment_type: 'default',
+//     callback_id: 'job_selection',
+//     actions: [
+//       {
+//         name: 'jobs_list',
+//         text: 'Pick a job...',
+//         type: 'select',
+//         options: selectOpts,
+//       },
+//     ],
+//   },
+
+
+// options request from slack sends:
+
+{
+  "payload": {
+    "name": "jobs_list",
+    "value": "",
+    "callback_id": "job_selection",
+    "type": "interactive_message",
+    "team": {
+      "id": "T91C60KBK",
+      "domain": "smolatutors"
+    },
+    "channel": {
+      "id": "CA0T1BEFR",
+      "name": "bot-testing"
+    },
+    "user": {
+      "id": "U91UB5R6W",
+      "name": "callmesmola"
+    },
+    "action_ts": "1523213406.568874",
+    "message_ts": "1523213405.000141",
+    "attachment_id": "1",
+    "token": "gYlkX2OTU5hnF6pwkLuVS37c"
+  }
+}
+
+
+
+// select job from list triggers:
+
+{
+  "payload": {
+    "type": "interactive_message",
+    "actions": [
+      {
+        "name": "jobs_list",
+        "type": "select",
+        "selected_options": [
+          {
+            "value": "polymer-qa3.dev.gloo.us"
+          }
+        ]
+      }
+    ],
+    "callback_id": "job_selection",
+    "team": {
+      "id": "T91C60KBK",
+      "domain": "smolatutors"
+    },
+    "channel": {
+      "id": "CA0T1BEFR",
+      "name": "bot-testing"
+    },
+    "user": {
+      "id": "U91UB5R6W",
+      "name": "callmesmola"
+    },
+    "action_ts": "1523149768.300196",
+    "message_ts": "1523149748.000037",
+    "attachment_id": "1",
+    "token": "gYlkX2OTU5hnF6pwkLuVS37c",
+    "is_app_unfurl": false,
+    "response_url": "https:\\/\\/hooks.slack.com\\/actions\\/T91C60KBK\\/344108694167\\/Qs1Ml6LqFtvu8AEWDb6UxxQK",
+    "trigger_id": "342361487840.307414019393.5eafaead6a420e74155e6971c1c2a33a"
+  }
+}

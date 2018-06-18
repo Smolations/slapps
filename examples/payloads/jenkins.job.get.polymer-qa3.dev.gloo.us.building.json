@@ -1,0 +1,336 @@
+{
+  "_class": "hudson.model.FreeStyleProject",
+  "actions": [
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "master"
+          },
+          "description": "Ansible-polymer Infrastructure repository version\nPrimary branches are:\n  master\n  develop\n\nSet branch value as needed if you wish to test deployment code updates",
+          "name": "infra_version",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "value": false
+          },
+          "description": "Do you need to run/re-run the steps to configure the server(s) Operating System?",
+          "name": "task_configure_os",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "value": false
+          },
+          "description": "Do you need to run/re-run the steps to configure the server(s) to run the Polymer Stack?",
+          "name": "task_configure_polymer",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "value": false
+          },
+          "description": "Destroy and reload database with fresh a scrubbed dump on this stack. \nNOTE: You must also enable the data_reindex option below otherwise search data will be stale.\n\nOnly Scrubbed data is allowed. If regular data is required please request a dedicated stack from DevOps.",
+          "name": "data_import",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "value": false
+          },
+          "description": "Reindex all of the elastic search data.\nNOTE: You must enable this option if doing a data_import above.",
+          "name": "data_reindex",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "value": true
+          },
+          "description": "Deploy all code changes to the Polymer application. Keep this box checked if you would like to deploy new code. Un-check this box to save time if you are just restarting the application process or reloading the database reindexing search.",
+          "name": "task_deploy",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "false"
+          },
+          "description": "Select True to remove cached files: node_modules, jspm_modules, gems, local repo copy, and build directories.  All assets are then freshly downloaded",
+          "name": "clean_deploy",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "false",
+            "true"
+          ]
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "mainline"
+          },
+          "description": "Polymer Version/Tag to deploy",
+          "name": "polymer_version",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "value": false
+          },
+          "description": "Restart the platform application processes (this does not reboot the server)",
+          "name": "restart",
+          "type": "BooleanParameterDefinition"
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "_class": "org.jenkins.ci.plugins.jenkinslint.JobLintAction"
+    },
+    {},
+    {},
+    {
+      "_class": "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description": "This is the Ansible stack management for the qa3 environment\r\n\r\nhttps://polymer-qa3.dev.gloo.us\r\n\r\nVersion Instructions:\r\nSpecify the branches if you'd like to build \r\n\r\nPossible options: \r\n<branchName> \r\n<tagName>\r\n<commitId>\r\n\r\nDefault Polymer Branch:  mainline\r\nDefault ansible Branch:  master",
+  "displayName": "polymer-qa3.dev.gloo.us",
+  "displayNameOrNull": null,
+  "fullDisplayName": "polymer-qa3.dev.gloo.us",
+  "fullName": "polymer-qa3.dev.gloo.us",
+  "name": "polymer-qa3.dev.gloo.us",
+  "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/",
+  "buildable": true,
+  "builds": [
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 98,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/98/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 97,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/97/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 96,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/96/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 95,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/95/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 94,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/94/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 93,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/93/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 92,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/92/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 91,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/91/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 90,
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/90/"
+    }
+  ],
+  "color": "blue_anime",
+  "firstBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 90,
+    "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/90/"
+  },
+  "healthReport": [
+    {
+      "description": "Build stability: No recent builds failed.",
+      "iconClassName": "icon-health-80plus",
+      "iconUrl": "health-80plus.png",
+      "score": 100
+    }
+  ],
+  "inQueue": false,
+  "keepDependencies": false,
+  "lastBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 98,
+    "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/98/"
+  },
+  "lastCompletedBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 97,
+    "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/97/"
+  },
+  "lastFailedBuild": null,
+  "lastStableBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 97,
+    "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/97/"
+  },
+  "lastSuccessfulBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 97,
+    "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/97/"
+  },
+  "lastUnstableBuild": null,
+  "lastUnsuccessfulBuild": null,
+  "nextBuildNumber": 99,
+  "property": [
+    {
+      "_class": "hudson.plugins.buildblocker.BuildBlockerProperty"
+    },
+    {
+      "_class": "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class": "com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty"
+    },
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "infra_version",
+            "value": "master"
+          },
+          "description": "Ansible-polymer Infrastructure repository version\nPrimary branches are:\n  master\n  develop\n\nSet branch value as needed if you wish to test deployment code updates",
+          "name": "infra_version",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "name": "task_configure_os",
+            "value": false
+          },
+          "description": "Do you need to run/re-run the steps to configure the server(s) Operating System?",
+          "name": "task_configure_os",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "name": "task_configure_polymer",
+            "value": false
+          },
+          "description": "Do you need to run/re-run the steps to configure the server(s) to run the Polymer Stack?",
+          "name": "task_configure_polymer",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "name": "data_import",
+            "value": false
+          },
+          "description": "Destroy and reload database with fresh a scrubbed dump on this stack. \nNOTE: You must also enable the data_reindex option below otherwise search data will be stale.\n\nOnly Scrubbed data is allowed. If regular data is required please request a dedicated stack from DevOps.",
+          "name": "data_import",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "name": "data_reindex",
+            "value": false
+          },
+          "description": "Reindex all of the elastic search data.\nNOTE: You must enable this option if doing a data_import above.",
+          "name": "data_reindex",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "name": "task_deploy",
+            "value": true
+          },
+          "description": "Deploy all code changes to the Polymer application. Keep this box checked if you would like to deploy new code. Un-check this box to save time if you are just restarting the application process or reloading the database reindexing search.",
+          "name": "task_deploy",
+          "type": "BooleanParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "clean_deploy",
+            "value": "false"
+          },
+          "description": "Select True to remove cached files: node_modules, jspm_modules, gems, local repo copy, and build directories.  All assets are then freshly downloaded",
+          "name": "clean_deploy",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "false",
+            "true"
+          ]
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "polymer_version",
+            "value": "mainline"
+          },
+          "description": "Polymer Version/Tag to deploy",
+          "name": "polymer_version",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.BooleanParameterValue",
+            "name": "restart",
+            "value": false
+          },
+          "description": "Restart the platform application processes (this does not reboot the server)",
+          "name": "restart",
+          "type": "BooleanParameterDefinition"
+        }
+      ]
+    }
+  ],
+  "queueItem": null,
+  "concurrentBuild": false,
+  "downstreamProjects": [],
+  "labelExpression": null,
+  "scm": {
+    "_class": "hudson.plugins.git.GitSCM"
+  },
+  "upstreamProjects": []
+}

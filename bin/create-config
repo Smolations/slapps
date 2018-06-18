@@ -1,0 +1,54 @@
+#!/bin/sh
+
+echo "Creating config: ${NODE_ENV}.json"
+
+rm -rf config/${NODE_ENV}.json;
+
+cat > config/${NODE_ENV}.json <<-EOF
+{
+  "Tangogroup/nectar": {
+    "owner": "${NECTAR_REPO_OWNER}",
+    "name": "${NECTAR_REPO_NAME}",
+    "user": "${NECTAR_REPO_USER}",
+    "token": "${NECTAR_REPO_TOKEN}",
+    "defaultBranch": "${NECTAR_REPO_DEFAULT_BRANCH}",
+    "webhookUri": "${NECTAR_REPO_WEBHOOK_URI}",
+    "webhookSecret": "${NECTAR_REPO_WEBHOOK_SECRET}"
+  },
+  "jenkins": {
+    "token": "${JENKINS_TOKEN}",
+    "user": "${JENKINS_USER}",
+    "protocol": "${JENKINS_PROTOCOL}",
+    "url": "${JENKINS_URL}",
+    "port": ${JENKINS_PORT},
+    "csrfProtection": ${JENKINS_CSRF_PROTECTION},
+    "notifyUri": "${JENKINS_NOTIFY_URI}"
+  },
+  "nectarBot": {
+    "token": "${NECTARBOT_SLACK_TOKEN}",
+    "botToken": "${NECTARBOT_SLACK_BOT_TOKEN}",
+    "verificationToken": "${NECTARBOT_SLACK_VERIFICATION_TOKEN}",
+    "slashCommandUri": "${NECTARBOT_SLACK_SLASH_COMMAND_URI}",
+    "optionsLoadUri": "${NECTARBOT_SLACK_OPTIONS_LOAD_URI}",
+    "interactiveUri": "${NECTARBOT_SLACK_INTERACTIVE_URI}",
+    "broadcastChannels": [${NECTARBOT_SLACK_BROADCAST_CHANNELS}]
+  },
+  "aws-s3": {
+    "accessKeyId": "${NECTARBOT_AWS_ACCESS_KEY_ID}",
+    "secretAccessKey": "${NECTARBOT_AWS_SECRET_ACCESS_KEY}",
+    "bucket": "${NECTARBOT_AWS_BUCKET}"
+  },
+  "webServer": {
+    "port": "5000",
+    "pfx": "./config/${NODE_ENV}.pkcs12",
+    "passphrase": "${WEB_SERVER_PASSPHRASE}"
+  },
+  "log": {
+    "path": "${LOG_PATH}"
+  }
+}
+EOF
+
+if [ "$NODE_ENV" != "production" ]; then
+  cat config/${NODE_ENV}.json
+fi

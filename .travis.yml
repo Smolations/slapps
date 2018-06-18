@@ -1,0 +1,17 @@
+dist: trusty
+sudo: false
+
+language: node_js
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - .travis/install
+
+script:
+  - .travis/script
+
+matrix:
+  fast_finish: true

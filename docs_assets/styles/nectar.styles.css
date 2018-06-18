@@ -1,0 +1,53 @@
+/*accomodate dynamic footer up to 100px*/
+.main section article {
+  padding: 10px 10px 100px 10px;
+}
+
+/*allows more space for names and types in tables*/
+.main section article table td.name,
+.main section article table td.type {
+  max-width: 300px;
+}
+
+/*file link for name of documented object*/
+.main section article .container-overview h4 {
+  position: relative;
+  margin-top: 0;
+  padding-top: 20px;
+}
+.main section article .container-overview .container-source {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+/*left nav; accomodate dynamic footer up to 100px*/
+#lnb {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 100px;
+}
+
+/*
+ reorder left nav items
+ original order(nth):
+  1(5). modules
+  2(6). externals
+  3(7). classes
+  4(8). mixins
+  5(9). interfaces
+  6(10). global
+*/
+.lnb-api:nth-of-type(5) { order: 1; }
+.lnb-api:nth-of-type(6) { order: 6; }
+.lnb-api:nth-of-type(7) { order: 4; }
+.lnb-api:nth-of-type(8) { order: 2; }
+.lnb-api:nth-of-type(9) { order: 3; }
+.lnb-api:nth-of-type(10) { order: 5; }
+
+footer {
+  height: auto; /* override default style so min-height works */
+  min-height: 35px;
+  max-height: 100px;
+}

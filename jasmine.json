@@ -1,0 +1,17 @@
+{
+  "spec_dir": "spec",
+  "helpers": [
+    "helpers/**/*.js"
+  ],
+  "spec_files": [
+    "./mixins/proxyable.spec.js",
+    "./mixins/*.spec.js",
+    "./interfaces/db-adapter.spec.js",
+    "./interfaces/processor.spec.js",
+    "./interfaces/processors.spec.js",
+    "./interfaces/options-processor.spec.js",
+    "./models_/*.spec.js"
+  ],
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}

@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "config/",
+    "interfaces/",
+    "mixins/",
+    "models/",
+    "spec/"
+  ],
+  "ext": "js,json",
+  "exec": "npm test"
+}

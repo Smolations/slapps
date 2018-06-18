@@ -1,0 +1,84 @@
+{
+  "FIRST REQUEST": {
+    "name": "QA-Control",
+    "display_name": "QA-Control",
+    "url": "job/QA-Control/",
+    "build": {
+      "full_url": "https://jenkins.gloo.us/job/QA-Control/884/",
+      "number": 884,
+      "queue_id": 1739,
+      "timestamp": 1523672651634,
+      "phase": "QUEUED",
+      "url": "job/QA-Control/884/",
+      "scm": {},
+      "parameters": {
+        "ACTION": "status",
+        "ENVIRONMENT": "qa3"
+      },
+      "log": "",
+      "artifacts": {}
+    }
+  },
+  "SECOND REQUEST": {
+    "name": "QA-Control",
+    "display_name": "QA-Control",
+    "url": "job/QA-Control/",
+    "build": {
+      "full_url": "https://jenkins.gloo.us/job/QA-Control/884/",
+      "number": 884,
+      "queue_id": 1739,
+      "timestamp": 1523672651634,
+      "phase": "STARTED",
+      "url": "job/QA-Control/884/",
+      "scm": {},
+      "parameters": {
+        "ACTION": "status",
+        "ENVIRONMENT": "qa3"
+      },
+      "log": "",
+      "artifacts": {}
+    }
+  },
+  "THIRD REQUEST": {
+    "name": "QA-Control",
+    "display_name": "QA-Control",
+    "url": "job/QA-Control/",
+    "build": {
+      "full_url": "https://jenkins.gloo.us/job/QA-Control/884/",
+      "number": 884,
+      "queue_id": 1739,
+      "timestamp": 1523672659547,
+      "phase": "COMPLETED",
+      "status": "SUCCESS",
+      "url": "job/QA-Control/884/",
+      "scm": {},
+      "parameters": {
+        "ACTION": "status",
+        "ENVIRONMENT": "qa3"
+      },
+      "log": "",
+      "artifacts": {}
+    }
+  },
+  "FOURTH REQUEST": {
+    "name": "QA-Control",
+    "display_name": "QA-Control",
+    "url": "job/QA-Control/",
+    "build": {
+      "full_url": "https://jenkins.gloo.us/job/QA-Control/884/",
+      "number": 884,
+      "queue_id": 1739,
+      "timestamp": 1523672659911,
+      "phase": "FINALIZED",
+      "status": "SUCCESS",
+      "url": "job/QA-Control/884/",
+      "scm": {},
+      "parameters": {
+        "ACTION": "status",
+        "ENVIRONMENT": "qa3"
+      },
+      "log": "",
+      "artifacts": {}
+    }
+  }
+}

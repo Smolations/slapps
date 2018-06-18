@@ -1,0 +1,182 @@
+jenkins notify url
+
+manually started job
+
+  2018-04-05T16:42:31.319613+00:00 heroku[router]: at=info method=POST path="/slack/jenkins" host=warm-tor-51579.herokuapp.com request_id=932edc54-f37f-4dc1-8242-b36ebb814bad fwd="52.38.32.218" dyno=web.1 connect=1ms service=122ms status=200 bytes=108 protocol=https
+  2018-04-05T16:42:31.319401+00:00 app[web.1]: debug: EMIT WebServer:request:post {} uri=/slack/jenkins, {"name":"sauce_labs_e2e","display_name":"sauce_labs_e2e","url":"job/sauce_labs_e2e/","build":{"full_url":"https://jenkins.gloo.us/job/sauce_labs_e2e/1143/","number":1143,"queue_id":851,"timestamp":1522946550721,"phase":"QUEUED","url":"job/sauce_labs_e2e/1143/","scm":{"url":"git@github.com:TangoGroup/polymer.git","branch":"origin/mainline","commit":"7606aadb2dcaa2a03426861be6528a5940031f71"},"parameters":{"E2E_USERNAME_EDGE":"username_387289","E2E_PASSWORD_EDGE":"gloo12345","E2E_PASSWORD_IE":"gloo12345","E2E_USERNAME_IE":"username_385559","E2E_PASSWORD":"gloo12345","E2E_USERNAME_FIREFOX":"username_387292","E2E_URL":"","E2E_USERNAME":"username_28415","E2E_USERNAME_SAFARI":"username_387290","E2E_PASSWORD_FIREFOX":"gloo12345","E2E_PASSWORD_SAFARI":"gloo12345","E2E_SAUCE_USERNAME":"","E2E_USERNAME_CHROME":"username_387295","polymer_version":"mainline","E2E_SAUCE_ACCESS_KEY":"","E2E_PASSWORD_CHROME":"gloo12345"},"log":"","artifacts":{}}}=
+    {
+      "name": "sauce_labs_e2e",
+      "display_name": "sauce_labs_e2e",
+      "url": "job/sauce_labs_e2e/",
+      "build": {
+        "full_url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1143/",
+        "number": 1143,
+        "queue_id": 851,
+        "timestamp": 1522946550721,
+        "phase": "QUEUED",
+        "url": "job/sauce_labs_e2e/1143/",
+        "scm": {
+          "url": "git@github.com:TangoGroup/polymer.git",
+          "branch": "origin/mainline",
+          "commit": "7606aadb2dcaa2a03426861be6528a5940031f71"
+        },
+        "parameters": {
+          "E2E_USERNAME_EDGE": "username_387289",
+          "E2E_PASSWORD_EDGE": "gloo12345",
+          "E2E_PASSWORD_IE": "gloo12345",
+          "E2E_USERNAME_IE": "username_385559",
+          "E2E_PASSWORD": "gloo12345",
+          "E2E_USERNAME_FIREFOX": "username_387292",
+          "E2E_URL": "",
+          "E2E_USERNAME": "username_28415",
+          "E2E_USERNAME_SAFARI": "username_387290",
+          "E2E_PASSWORD_FIREFOX": "gloo12345",
+          "E2E_PASSWORD_SAFARI": "gloo12345",
+          "E2E_SAUCE_USERNAME": "",
+          "E2E_USERNAME_CHROME": "username_387295",
+          "polymer_version": "mainline",
+          "E2E_SAUCE_ACCESS_KEY": "",
+          "E2E_PASSWORD_CHROME": "gloo12345"
+        },
+        "log": "",
+        "artifacts": {}
+      }
+    }
+  2018-04-05T16:42:31.319844+00:00 app[web.1]: debug: subscriber checking:  /slack/jenkins === /slack/slash
+  2018-04-05T16:42:31.692745+00:00 heroku[router]: at=info method=POST path="/slack/jenkins" host=warm-tor-51579.herokuapp.com request_id=216e65cd-6a00-4ac1-b5c2-c4cb1fb55589 fwd="52.38.32.218" dyno=web.1 connect=0ms service=6ms status=200 bytes=108 protocol=https
+  2018-04-05T16:42:31.692677+00:00 app[web.1]: debug: EMIT WebServer:request:post {} uri=/slack/jenkins, {"name":"sauce_labs_e2e","display_name":"sauce_labs_e2e","url":"job/sauce_labs_e2e/","build":{"full_url":"https://jenkins.gloo.us/job/sauce_labs_e2e/1143/","number":1143,"queue_id":851,"timestamp":1522946550719,"phase":"STARTED","url":"job/sauce_labs_e2e/1143/","scm":{"url":"git@github.com:TangoGroup/polymer.git","branch":"origin/mainline","commit":"7606aadb2dcaa2a03426861be6528a5940031f71"},"parameters":{"E2E_USERNAME_EDGE":"username_387289","E2E_PASSWORD_EDGE":"gloo12345","E2E_PASSWORD_IE":"gloo12345","E2E_USERNAME_IE":"username_385559","E2E_PASSWORD":"gloo12345","E2E_USERNAME_FIREFOX":"username_387292","E2E_URL":"","E2E_USERNAME":"username_28415","E2E_USERNAME_SAFARI":"username_387290","E2E_PASSWORD_FIREFOX":"gloo12345","E2E_PASSWORD_SAFARI":"gloo12345","E2E_SAUCE_USERNAME":"","E2E_USERNAME_CHROME":"username_387295","polymer_version":"mainline","E2E_SAUCE_ACCESS_KEY":"","E2E_PASSWORD_CHROME":"gloo12345"},"log":"","artifacts":{}}}=
+    {
+      "name": "sauce_labs_e2e",
+      "display_name": "sauce_labs_e2e",
+      "url": "job/sauce_labs_e2e/",
+      "build": {
+        "full_url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1143/",
+        "number": 1143,
+        "queue_id": 851,
+        "timestamp": 1522946550719,
+        "phase": "STARTED",
+        "url": "job/sauce_labs_e2e/1143/",
+        "scm": {
+          "url": "git@github.com:TangoGroup/polymer.git",
+          "branch": "origin/mainline",
+          "commit": "7606aadb2dcaa2a03426861be6528a5940031f71"
+        },
+        "parameters": {
+          "E2E_USERNAME_EDGE": "username_387289",
+          "E2E_PASSWORD_EDGE": "gloo12345",
+          "E2E_PASSWORD_IE": "gloo12345",
+          "E2E_USERNAME_IE": "username_385559",
+          "E2E_PASSWORD": "gloo12345",
+          "E2E_USERNAME_FIREFOX": "username_387292",
+          "E2E_URL": "",
+          "E2E_USERNAME": "username_28415",
+          "E2E_USERNAME_SAFARI": "username_387290",
+          "E2E_PASSWORD_FIREFOX": "gloo12345",
+          "E2E_PASSWORD_SAFARI": "gloo12345",
+          "E2E_SAUCE_USERNAME": "",
+          "E2E_USERNAME_CHROME": "username_387295",
+          "polymer_version": "mainline",
+          "E2E_SAUCE_ACCESS_KEY": "",
+          "E2E_PASSWORD_CHROME": "gloo12345"
+        },
+        "log": "",
+        "artifacts": {}
+      }
+    }
+  2018-04-05T16:42:31.693904+00:00 app[web.1]: debug: subscriber checking:  /slack/jenkins === /slack/slash
+
+
+
+manually cancelled job
+
+  2018-04-05T16:42:37.162144+00:00 heroku[router]: at=info method=POST path="/slack/jenkins" host=warm-tor-51579.herokuapp.com request_id=eee5675d-c1eb-4220-90b0-49d89f792360 fwd="52.38.32.218" dyno=web.1 connect=0ms service=4ms status=200 bytes=108 protocol=https
+  2018-04-05T16:42:37.162649+00:00 app[web.1]: debug: EMIT WebServer:request:post {} uri=/slack/jenkins, {"name":"sauce_labs_e2e","display_name":"sauce_labs_e2e","url":"job/sauce_labs_e2e/","build":{"full_url":"https://jenkins.gloo.us/job/sauce_labs_e2e/1143/","number":1143,"queue_id":851,"timestamp":1522946556944,"phase":"COMPLETED","status":"ABORTED","url":"job/sauce_labs_e2e/1143/","scm":{"url":"git@github.com:TangoGroup/polymer.git","branch":"origin/mainline","commit":"7606aadb2dcaa2a03426861be6528a5940031f71"},"parameters":{"E2E_USERNAME_EDGE":"username_387289","E2E_PASSWORD_EDGE":"gloo12345","E2E_PASSWORD_IE":"gloo12345","E2E_USERNAME_IE":"username_385559","E2E_PASSWORD":"gloo12345","E2E_USERNAME_FIREFOX":"username_387292","E2E_URL":"","E2E_USERNAME":"username_28415","E2E_USERNAME_SAFARI":"username_387290","E2E_PASSWORD_FIREFOX":"gloo12345","E2E_PASSWORD_SAFARI":"gloo12345","E2E_SAUCE_USERNAME":"","E2E_USERNAME_CHROME":"username_387295","polymer_version":"mainline","E2E_SAUCE_ACCESS_KEY":"","E2E_PASSWORD_CHROME":"gloo12345"},"log":"","artifacts":{}}}=
+    {
+      "name": "sauce_labs_e2e",
+      "display_name": "sauce_labs_e2e",
+      "url": "job/sauce_labs_e2e/",
+      "build": {
+        "full_url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1143/",
+        "number": 1143,
+        "queue_id": 851,
+        "timestamp": 1522946556944,
+        "phase": "COMPLETED",
+        "status": "ABORTED",
+        "url": "job/sauce_labs_e2e/1143/",
+        "scm": {
+          "url": "git@github.com:TangoGroup/polymer.git",
+          "branch": "origin/mainline",
+          "commit": "7606aadb2dcaa2a03426861be6528a5940031f71"
+        },
+        "parameters": {
+          "E2E_USERNAME_EDGE": "username_387289",
+          "E2E_PASSWORD_EDGE": "gloo12345",
+          "E2E_PASSWORD_IE": "gloo12345",
+          "E2E_USERNAME_IE": "username_385559",
+          "E2E_PASSWORD": "gloo12345",
+          "E2E_USERNAME_FIREFOX": "username_387292",
+          "E2E_URL": "",
+          "E2E_USERNAME": "username_28415",
+          "E2E_USERNAME_SAFARI": "username_387290",
+          "E2E_PASSWORD_FIREFOX": "gloo12345",
+          "E2E_PASSWORD_SAFARI": "gloo12345",
+          "E2E_SAUCE_USERNAME": "",
+          "E2E_USERNAME_CHROME": "username_387295",
+          "polymer_version": "mainline",
+          "E2E_SAUCE_ACCESS_KEY": "",
+          "E2E_PASSWORD_CHROME": "gloo12345"
+        },
+        "log": "",
+        "artifacts": {}
+      }
+    }
+  2018-04-05T16:42:37.162838+00:00 app[web.1]: debug: subscriber checking:  /slack/jenkins === /slack/slash
+  2018-04-05T16:42:37.525630+00:00 heroku[router]: at=info method=POST path="/slack/jenkins" host=warm-tor-51579.herokuapp.com request_id=d756bdd5-0e78-4fe0-ba2f-3197f3f7a8e5 fwd="52.38.32.218" dyno=web.1 connect=0ms service=3ms status=200 bytes=108 protocol=https
+  2018-04-05T16:42:37.526180+00:00 app[web.1]: debug: EMIT WebServer:request:post {} uri=/slack/jenkins, {"name":"sauce_labs_e2e","display_name":"sauce_labs_e2e","url":"job/sauce_labs_e2e/","build":{"full_url":"https://jenkins.gloo.us/job/sauce_labs_e2e/1143/","number":1143,"queue_id":851,"timestamp":1522946557209,"phase":"FINALIZED","status":"ABORTED","url":"job/sauce_labs_e2e/1143/","scm":{"url":"git@github.com:TangoGroup/polymer.git","branch":"origin/mainline","commit":"7606aadb2dcaa2a03426861be6528a5940031f71"},"parameters":{"E2E_USERNAME_EDGE":"username_387289","E2E_PASSWORD_EDGE":"gloo12345","E2E_PASSWORD_IE":"gloo12345","E2E_USERNAME_IE":"username_385559","E2E_PASSWORD":"gloo12345","E2E_USERNAME_FIREFOX":"username_387292","E2E_URL":"","E2E_USERNAME":"username_28415","E2E_USERNAME_SAFARI":"username_387290","E2E_PASSWORD_FIREFOX":"gloo12345","E2E_PASSWORD_SAFARI":"gloo12345","E2E_SAUCE_USERNAME":"","E2E_USERNAME_CHROME":"username_387295","polymer_version":"mainline","E2E_SAUCE_ACCESS_KEY":"","E2E_PASSWORD_CHROME":"gloo12345"},"log":"","artifacts":{}}}=
+    {
+      "name": "sauce_labs_e2e",
+      "display_name": "sauce_labs_e2e",
+      "url": "job/sauce_labs_e2e/",
+      "build": {
+        "full_url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1143/",
+        "number": 1143,
+        "queue_id": 851,
+        "timestamp": 1522946557209,
+        "phase": "FINALIZED",
+        "status": "ABORTED",
+        "url": "job/sauce_labs_e2e/1143/",
+        "scm": {
+          "url": "git@github.com:TangoGroup/polymer.git",
+          "branch": "origin/mainline",
+          "commit": "7606aadb2dcaa2a03426861be6528a5940031f71"
+        },
+        "parameters": {
+          "E2E_USERNAME_EDGE": "username_387289",
+          "E2E_PASSWORD_EDGE": "gloo12345",
+          "E2E_PASSWORD_IE": "gloo12345",
+          "E2E_USERNAME_IE": "username_385559",
+          "E2E_PASSWORD": "gloo12345",
+          "E2E_USERNAME_FIREFOX": "username_387292",
+          "E2E_URL": "",
+          "E2E_USERNAME": "username_28415",
+          "E2E_USERNAME_SAFARI": "username_387290",
+          "E2E_PASSWORD_FIREFOX": "gloo12345",
+          "E2E_PASSWORD_SAFARI": "gloo12345",
+          "E2E_SAUCE_USERNAME": "",
+          "E2E_USERNAME_CHROME": "username_387295",
+          "polymer_version": "mainline",
+          "E2E_SAUCE_ACCESS_KEY": "",
+          "E2E_PASSWORD_CHROME": "gloo12345"
+        },
+        "log": "",
+        "artifacts": {}
+      }
+    }
+  2018-04-05T16:42:37.526434+00:00 app[web.1]: debug: subscriber checking:  /slack/jenkins === /slack/slash
+
+
+conclusions
+
+it appears that, for each manual action, 2 post hooks are fired off in quick
+succession. the composition of the passed json objects are almost completely
+identical, save for the "phase" key.

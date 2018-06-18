@@ -1,0 +1,112 @@
+{
+  "_class": "hudson.plugins.project_inheritance.projects.InheritanceBuild",
+  "actions": [
+    {},
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Chris Smola",
+          "userId": "csmola@tangogroup.com",
+          "userName": "Chris Smola"
+        }
+      ]
+    },
+    {},
+    {
+      "_class": "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName": {
+        "refs/remotes/origin/chore/prep-for-ci": {
+          "_class": "hudson.plugins.git.util.Build",
+          "buildNumber": 20,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "ef49ed70e7bf9eeadf42c902fb1b9bf007951f54",
+            "branch": [
+              {
+                "SHA1": "ef49ed70e7bf9eeadf42c902fb1b9bf007951f54",
+                "name": "refs/remotes/origin/chore/prep-for-ci"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "ef49ed70e7bf9eeadf42c902fb1b9bf007951f54",
+            "branch": [
+              {
+                "SHA1": "ef49ed70e7bf9eeadf42c902fb1b9bf007951f54",
+                "name": "refs/remotes/origin/chore/prep-for-ci"
+              }
+            ]
+          }
+        },
+        "refs/remotes/origin/master": {
+          "_class": "hudson.plugins.git.util.Build",
+          "buildNumber": 19,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "26314c0eeaf7b10db3fc81d1a4c318abb137e0d3",
+            "branch": [
+              {
+                "SHA1": "26314c0eeaf7b10db3fc81d1a4c318abb137e0d3",
+                "name": "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "26314c0eeaf7b10db3fc81d1a4c318abb137e0d3",
+            "branch": [
+              {
+                "SHA1": "26314c0eeaf7b10db3fc81d1a4c318abb137e0d3",
+                "name": "refs/remotes/origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "ef49ed70e7bf9eeadf42c902fb1b9bf007951f54",
+        "branch": [
+          {
+            "SHA1": "ef49ed70e7bf9eeadf42c902fb1b9bf007951f54",
+            "name": "refs/remotes/origin/chore/prep-for-ci"
+          }
+        ]
+      },
+      "remoteUrls": [
+        "git@github.com:TangoGroup/nectar.git"
+      ],
+      "scmName": ""
+    },
+    {
+      "_class": "hudson.plugins.git.GitTagAction"
+    },
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "artifacts": [],
+  "building": false,
+  "description": null,
+  "displayName": "#20",
+  "duration": 560656,
+  "estimatedDuration": 196757,
+  "executor": null,
+  "fullDisplayName": "nectar.storybook #20",
+  "id": "20",
+  "keepLog": false,
+  "number": 20,
+  "queueId": 5593,
+  "result": "SUCCESS",
+  "timestamp": 1527180585187,
+  "url": "https://jenkins.gloo.us/job/nectar.storybook/20/",
+  "builtOn": "",
+  "changeSet": {
+    "_class": "hudson.plugins.git.GitChangeSetList",
+    "items": [],
+    "kind": "git"
+  },
+  "culprits": []
+}

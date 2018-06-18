@@ -1,0 +1,57 @@
+{
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "recurseDepth": 10,
+  "source": {
+    "include": [
+      "./externals.jsdoc",
+      "./modules.jsdoc",
+      "./interfaces",
+      "./mixins",
+      "./models"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_",
+    "exclude": []
+  },
+  "sourceType": "module",
+  "opts": {
+    "template": "./node_modules/tui-jsdoc-template",
+    // "template": "./node_modules/toast-jsdoc",
+    // "template": "templates/default",
+    // "template": "templates/haruki",
+    "encoding": "utf8",
+    "destination": "./docs/",
+    "recurse": true,
+    "tutorials": "./tutorials"
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": false,
+    "name": "slackbot",
+    "default": {
+      "staticFiles": {
+        "include": ["docs_assets/"]
+      }
+    },
+    "css": [
+      "styles/nectar.styles.css"
+    ],
+    "logo": {
+      "url": "/img/nectar_logo_200x200.png",
+      "width": "50px",
+      "height": "50px",
+      "link": "/"
+    },
+    "tabNames": {
+      "api": "API",
+      "tutorials": "Tutorials"
+    },
+    "footerText": "<script type='text/javascript' src='scripts/modify-template.js'></script>"
+  }
+}

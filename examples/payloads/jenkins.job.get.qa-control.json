@@ -1,0 +1,661 @@
+{
+  "_class": "hudson.model.FreeStyleProject",
+  "actions": [
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "qa1wl"
+          },
+          "description": "",
+          "name": "ENVIRONMENT",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "qa1wl",
+            "qa2",
+            "qa3",
+            "qa4",
+            "qa5",
+            "restricted1",
+            "qa11"
+          ]
+        },
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "start"
+          },
+          "description": "Select the Action you wish to perform ",
+          "name": "ACTION",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "start",
+            "stop",
+            "status"
+          ]
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "_class": "org.jenkins.ci.plugins.jenkinslint.JobLintAction"
+    },
+    {},
+    {},
+    {
+      "_class": "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description": "This Job performs the following actions on the selected Environment;  \r\nStop, (shutdown the stack instances)\r\nStart, (boot the stack) \r\nStatus (displays the current state of the stack, Ie running or stopped)\r\n\r\n",
+  "displayName": "QA-Control",
+  "displayNameOrNull": null,
+  "fullDisplayName": "QA-Control",
+  "fullName": "QA-Control",
+  "name": "QA-Control",
+  "url": "https://jenkins.gloo.us/job/QA-control/",
+  "buildable": true,
+  "builds": [
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 866,
+      "url": "https://jenkins.gloo.us/job/QA-control/866/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 865,
+      "url": "https://jenkins.gloo.us/job/QA-control/865/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 864,
+      "url": "https://jenkins.gloo.us/job/QA-control/864/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 863,
+      "url": "https://jenkins.gloo.us/job/QA-control/863/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 862,
+      "url": "https://jenkins.gloo.us/job/QA-control/862/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 861,
+      "url": "https://jenkins.gloo.us/job/QA-control/861/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 860,
+      "url": "https://jenkins.gloo.us/job/QA-control/860/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 859,
+      "url": "https://jenkins.gloo.us/job/QA-control/859/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 858,
+      "url": "https://jenkins.gloo.us/job/QA-control/858/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 857,
+      "url": "https://jenkins.gloo.us/job/QA-control/857/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 856,
+      "url": "https://jenkins.gloo.us/job/QA-control/856/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 855,
+      "url": "https://jenkins.gloo.us/job/QA-control/855/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 854,
+      "url": "https://jenkins.gloo.us/job/QA-control/854/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 853,
+      "url": "https://jenkins.gloo.us/job/QA-control/853/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 852,
+      "url": "https://jenkins.gloo.us/job/QA-control/852/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 851,
+      "url": "https://jenkins.gloo.us/job/QA-control/851/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 850,
+      "url": "https://jenkins.gloo.us/job/QA-control/850/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 849,
+      "url": "https://jenkins.gloo.us/job/QA-control/849/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 848,
+      "url": "https://jenkins.gloo.us/job/QA-control/848/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 847,
+      "url": "https://jenkins.gloo.us/job/QA-control/847/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 846,
+      "url": "https://jenkins.gloo.us/job/QA-control/846/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 845,
+      "url": "https://jenkins.gloo.us/job/QA-control/845/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 844,
+      "url": "https://jenkins.gloo.us/job/QA-control/844/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 843,
+      "url": "https://jenkins.gloo.us/job/QA-control/843/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 842,
+      "url": "https://jenkins.gloo.us/job/QA-control/842/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 841,
+      "url": "https://jenkins.gloo.us/job/QA-control/841/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 840,
+      "url": "https://jenkins.gloo.us/job/QA-control/840/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 839,
+      "url": "https://jenkins.gloo.us/job/QA-control/839/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 838,
+      "url": "https://jenkins.gloo.us/job/QA-control/838/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 837,
+      "url": "https://jenkins.gloo.us/job/QA-control/837/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 836,
+      "url": "https://jenkins.gloo.us/job/QA-control/836/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 835,
+      "url": "https://jenkins.gloo.us/job/QA-control/835/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 834,
+      "url": "https://jenkins.gloo.us/job/QA-control/834/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 833,
+      "url": "https://jenkins.gloo.us/job/QA-control/833/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 832,
+      "url": "https://jenkins.gloo.us/job/QA-control/832/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 831,
+      "url": "https://jenkins.gloo.us/job/QA-control/831/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 830,
+      "url": "https://jenkins.gloo.us/job/QA-control/830/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 829,
+      "url": "https://jenkins.gloo.us/job/QA-control/829/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 828,
+      "url": "https://jenkins.gloo.us/job/QA-control/828/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 827,
+      "url": "https://jenkins.gloo.us/job/QA-control/827/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 826,
+      "url": "https://jenkins.gloo.us/job/QA-control/826/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 825,
+      "url": "https://jenkins.gloo.us/job/QA-control/825/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 824,
+      "url": "https://jenkins.gloo.us/job/QA-control/824/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 823,
+      "url": "https://jenkins.gloo.us/job/QA-control/823/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 822,
+      "url": "https://jenkins.gloo.us/job/QA-control/822/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 821,
+      "url": "https://jenkins.gloo.us/job/QA-control/821/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 820,
+      "url": "https://jenkins.gloo.us/job/QA-control/820/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 819,
+      "url": "https://jenkins.gloo.us/job/QA-control/819/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 818,
+      "url": "https://jenkins.gloo.us/job/QA-control/818/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 817,
+      "url": "https://jenkins.gloo.us/job/QA-control/817/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 816,
+      "url": "https://jenkins.gloo.us/job/QA-control/816/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 815,
+      "url": "https://jenkins.gloo.us/job/QA-control/815/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 814,
+      "url": "https://jenkins.gloo.us/job/QA-control/814/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 813,
+      "url": "https://jenkins.gloo.us/job/QA-control/813/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 812,
+      "url": "https://jenkins.gloo.us/job/QA-control/812/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 811,
+      "url": "https://jenkins.gloo.us/job/QA-control/811/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 810,
+      "url": "https://jenkins.gloo.us/job/QA-control/810/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 809,
+      "url": "https://jenkins.gloo.us/job/QA-control/809/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 808,
+      "url": "https://jenkins.gloo.us/job/QA-control/808/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 807,
+      "url": "https://jenkins.gloo.us/job/QA-control/807/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 806,
+      "url": "https://jenkins.gloo.us/job/QA-control/806/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 805,
+      "url": "https://jenkins.gloo.us/job/QA-control/805/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 804,
+      "url": "https://jenkins.gloo.us/job/QA-control/804/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 803,
+      "url": "https://jenkins.gloo.us/job/QA-control/803/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 802,
+      "url": "https://jenkins.gloo.us/job/QA-control/802/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 801,
+      "url": "https://jenkins.gloo.us/job/QA-control/801/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 800,
+      "url": "https://jenkins.gloo.us/job/QA-control/800/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 799,
+      "url": "https://jenkins.gloo.us/job/QA-control/799/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 798,
+      "url": "https://jenkins.gloo.us/job/QA-control/798/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 797,
+      "url": "https://jenkins.gloo.us/job/QA-control/797/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 796,
+      "url": "https://jenkins.gloo.us/job/QA-control/796/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 795,
+      "url": "https://jenkins.gloo.us/job/QA-control/795/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 794,
+      "url": "https://jenkins.gloo.us/job/QA-control/794/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 793,
+      "url": "https://jenkins.gloo.us/job/QA-control/793/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 792,
+      "url": "https://jenkins.gloo.us/job/QA-control/792/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 791,
+      "url": "https://jenkins.gloo.us/job/QA-control/791/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 790,
+      "url": "https://jenkins.gloo.us/job/QA-control/790/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 789,
+      "url": "https://jenkins.gloo.us/job/QA-control/789/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 788,
+      "url": "https://jenkins.gloo.us/job/QA-control/788/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 787,
+      "url": "https://jenkins.gloo.us/job/QA-control/787/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 786,
+      "url": "https://jenkins.gloo.us/job/QA-control/786/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 785,
+      "url": "https://jenkins.gloo.us/job/QA-control/785/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 784,
+      "url": "https://jenkins.gloo.us/job/QA-control/784/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 783,
+      "url": "https://jenkins.gloo.us/job/QA-control/783/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 782,
+      "url": "https://jenkins.gloo.us/job/QA-control/782/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 781,
+      "url": "https://jenkins.gloo.us/job/QA-control/781/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 780,
+      "url": "https://jenkins.gloo.us/job/QA-control/780/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 779,
+      "url": "https://jenkins.gloo.us/job/QA-control/779/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 778,
+      "url": "https://jenkins.gloo.us/job/QA-control/778/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 777,
+      "url": "https://jenkins.gloo.us/job/QA-control/777/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 776,
+      "url": "https://jenkins.gloo.us/job/QA-control/776/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 775,
+      "url": "https://jenkins.gloo.us/job/QA-control/775/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 774,
+      "url": "https://jenkins.gloo.us/job/QA-control/774/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 773,
+      "url": "https://jenkins.gloo.us/job/QA-control/773/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 772,
+      "url": "https://jenkins.gloo.us/job/QA-control/772/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 771,
+      "url": "https://jenkins.gloo.us/job/QA-control/771/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 770,
+      "url": "https://jenkins.gloo.us/job/QA-control/770/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 769,
+      "url": "https://jenkins.gloo.us/job/QA-control/769/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 768,
+      "url": "https://jenkins.gloo.us/job/QA-control/768/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 767,
+      "url": "https://jenkins.gloo.us/job/QA-control/767/"
+    }
+  ],
+  "color": "blue",
+  "firstBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1,
+    "url": "https://jenkins.gloo.us/job/QA-control/1/"
+  },
+  "healthReport": [
+    {
+      "description": "Build stability: No recent builds failed.",
+      "iconClassName": "icon-health-80plus",
+      "iconUrl": "health-80plus.png",
+      "score": 100
+    }
+  ],
+  "inQueue": false,
+  "keepDependencies": false,
+  "lastBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 866,
+    "url": "https://jenkins.gloo.us/job/QA-control/866/"
+  },
+  "lastCompletedBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 866,
+    "url": "https://jenkins.gloo.us/job/QA-control/866/"
+  },
+  "lastFailedBuild": null,
+  "lastStableBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 866,
+    "url": "https://jenkins.gloo.us/job/QA-control/866/"
+  },
+  "lastSuccessfulBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 866,
+    "url": "https://jenkins.gloo.us/job/QA-control/866/"
+  },
+  "lastUnstableBuild": null,
+  "lastUnsuccessfulBuild": null,
+  "nextBuildNumber": 867,
+  "property": [
+    {
+      "_class": "hudson.plugins.buildblocker.BuildBlockerProperty"
+    },
+    {
+      "_class": "com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty"
+    },
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "ENVIRONMENT",
+            "value": "qa1wl"
+          },
+          "description": "",
+          "name": "ENVIRONMENT",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "qa1wl",
+            "qa2",
+            "qa3",
+            "qa4",
+            "qa5",
+            "restricted1",
+            "qa11"
+          ]
+        },
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "ACTION",
+            "value": "start"
+          },
+          "description": "Select the Action you wish to perform ",
+          "name": "ACTION",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "start",
+            "stop",
+            "status"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem": null,
+  "concurrentBuild": false,
+  "downstreamProjects": [],
+  "labelExpression": null,
+  "scm": {
+    "_class": "hudson.scm.NullSCM"
+  },
+  "upstreamProjects": []
+}

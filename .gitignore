@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+development*
+production*
+db/data/*
+docs/*
+log/*
+*.log
+test.js
+.now.env.development

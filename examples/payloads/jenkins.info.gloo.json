@@ -1,0 +1,530 @@
+{
+  "_class": "hudson.model.Hudson",
+  "assignedLabels": [
+    {
+      "name": "master"
+    }
+  ],
+  "mode": "NORMAL",
+  "nodeDescription": "the master Jenkins node",
+  "nodeName": "",
+  "numExecutors": 15,
+  "description": null,
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "ansible.prod.deploy",
+      "url": "https://jenkins.gloo.us/job/ansible.prod.deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "ansible.staging.deploy",
+      "url": "https://jenkins.gloo.us/job/ansible.staging.deploy/",
+      "color": "blue_anime"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "ansible.test.deploy",
+      "url": "https://jenkins.gloo.us/job/ansible.test.deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "dbscrub.gloo.us.Backup",
+      "url": "https://jenkins.gloo.us/job/dbscrub.gloo.us.Backup/",
+      "color": "blue_anime"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "dev_all_start",
+      "url": "https://jenkins.gloo.us/job/dev_all_start/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "dev_nightly_stop",
+      "url": "https://jenkins.gloo.us/job/dev_nightly_stop/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "devbot-deploy",
+      "url": "https://jenkins.gloo.us/job/devbot-deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.maven.MavenModuleSet",
+      "name": "insights.dmp.relay.build",
+      "url": "https://jenkins.gloo.us/job/insights.dmp.relay.build/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "insights.dmp.relay.dev.deploy",
+      "url": "https://jenkins.gloo.us/job/insights.dmp.relay.dev.deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "insights.dmp.relay.prod.deploy",
+      "url": "https://jenkins.gloo.us/job/insights.dmp.relay.prod.deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "insights.etl.es.S3snap",
+      "url": "https://jenkins.gloo.us/job/insights.etl.es.S3snap/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "insights.etl.reveal_export",
+      "url": "https://jenkins.gloo.us/job/insights.etl.reveal_export/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "insights.etl.run-etl",
+      "url": "https://jenkins.gloo.us/job/insights.etl.run-etl/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "jenkins.gloo.us.Backup",
+      "url": "https://jenkins.gloo.us/job/jenkins.gloo.us.Backup/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "looker.gloo.us.Backup",
+      "url": "https://jenkins.gloo.us/job/looker.gloo.us.Backup/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-auto1.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-auto1.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-docbuild.dev.gloo.us.ApiBuild",
+      "url": "https://jenkins.gloo.us/job/polymer-docbuild.dev.gloo.us.ApiBuild/",
+      "color": "blue_anime"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-docbuild.dev.gloo.us.Provision",
+      "url": "https://jenkins.gloo.us/job/polymer-docbuild.dev.gloo.us.Provision/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-docbuild.dev.gloo.us.RefreshDB",
+      "url": "https://jenkins.gloo.us/job/polymer-docbuild.dev.gloo.us.RefreshDB/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-environment-create-singlehost-vpc",
+      "url": "https://jenkins.gloo.us/job/polymer-environment-create-singlehost-vpc/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-environment-create-staging",
+      "url": "https://jenkins.gloo.us/job/polymer-environment-create-staging/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.ASGUpdate",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.ASGUpdate/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.GhostInspector",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.GhostInspector/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.Manual.Build",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.Manual.Build/",
+      "color": "disabled"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.NewRelic",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.NewRelic/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.Provision",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.Provision/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.Reindex",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.Reindex/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.RollASGInstances",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.RollASGInstances/",
+      "color": "disabled"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.S3Deploy",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.S3Deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-prod.gloo.us.SauceLabs",
+      "url": "https://jenkins.gloo.us/job/polymer-prod.gloo.us.SauceLabs/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa11.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa11.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa1wl.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa1wl.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa2.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa2.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa3.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/",
+      "color": "aborted"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa4.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa4.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa5.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa5.dev.gloo.us/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-qa6es5.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-qa6es5.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-restricted1.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-restricted1.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.build",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.build/",
+      "color": "blue_anime"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.GhostInspector",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.GhostInspector/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.Provision",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.Provision/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.PushS3",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.PushS3/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.RefreshDB",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.RefreshDB/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.ReIndex",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.ReIndex/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.SauceLabs",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.SauceLabs/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.ASGUpdate",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.ASGUpdate/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.Build",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.Build/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.DailyStart",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.DailyStart/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.GhostInspector",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.GhostInspector/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.NightlyStop",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.NightlyStop/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.Provision",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.Provision/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.RollASGInstances",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.RollASGInstances/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.dev.gloo.us.S3Deploy",
+      "url": "https://jenkins.gloo.us/job/polymer-test.dev.gloo.us.S3Deploy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.gloo.us.RefreshDB",
+      "url": "https://jenkins.gloo.us/job/polymer-test.gloo.us.RefreshDB/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-test.gloo.us.ReIndex",
+      "url": "https://jenkins.gloo.us/job/polymer-test.gloo.us.ReIndex/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-uitest1.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-uitest1.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-uitest11.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-uitest11.dev.gloo.us/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-uitest2.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-uitest2.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-uitest3.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-uitest3.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-uitest4.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-uitest4.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-uitest5.dev.gloo.us",
+      "url": "https://jenkins.gloo.us/job/polymer-uitest5.dev.gloo.us/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer.provision.MultiDev",
+      "url": "https://jenkins.gloo.us/job/polymer.provision.MultiDev/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer.provision.MultiDev.asg",
+      "url": "https://jenkins.gloo.us/job/polymer.provision.MultiDev.asg/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer.provision.SingleDev",
+      "url": "https://jenkins.gloo.us/job/polymer.provision.SingleDev/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer.provision.SingleDevVPC",
+      "url": "https://jenkins.gloo.us/job/polymer.provision.SingleDevVPC/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer.stack.destroy",
+      "url": "https://jenkins.gloo.us/job/polymer.stack.destroy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "production.build.cleanup",
+      "url": "https://jenkins.gloo.us/job/production.build.cleanup/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.maven.MavenModuleSet",
+      "name": "publisher",
+      "url": "https://jenkins.gloo.us/job/publisher/",
+      "color": "notbuilt"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "QA-Control",
+      "url": "https://jenkins.gloo.us/job/QA-Control/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "ReleaseSlackNotify",
+      "url": "https://jenkins.gloo.us/job/ReleaseSlackNotify/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "sauce_labs_e2e",
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template.multihost.control",
+      "url": "https://jenkins.gloo.us/job/template.multihost.control/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template.singlehost.control",
+      "url": "https://jenkins.gloo.us/job/template.singlehost.control/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "Uitest-control",
+      "url": "https://jenkins.gloo.us/job/Uitest-control/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "welk.es.S3snap",
+      "url": "https://jenkins.gloo.us/job/welk.es.S3snap/",
+      "color": "blue"
+    }
+  ],
+  "overallLoad": {},
+  "primaryView": {
+    "_class": "hudson.model.AllView",
+    "name": "all",
+    "url": "https://jenkins.gloo.us/"
+  },
+  "quietingDown": false,
+  "slaveAgentPort": 0,
+  "unlabeledLoad": {
+    "_class": "jenkins.model.UnlabeledLoadStatistics"
+  },
+  "useCrumbs": true,
+  "useSecurity": true,
+  "views": [
+    {
+      "_class": "hudson.plugins.view.dashboard.Dashboard",
+      "name": "AnsibleDevOps",
+      "url": "https://jenkins.gloo.us/view/AnsibleDevOps/"
+    },
+    {
+      "_class": "com.smartcodeltd.jenkinsci.plugins.buildmonitor.BuildMonitorView",
+      "name": "Build Monitor",
+      "url": "https://jenkins.gloo.us/view/Build%20Monitor/"
+    },
+    {
+      "_class": "hudson.model.ListView",
+      "name": "Insights",
+      "url": "https://jenkins.gloo.us/view/Insights/"
+    },
+    {
+      "_class": "hudson.plugins.view.dashboard.Dashboard",
+      "name": "Production",
+      "url": "https://jenkins.gloo.us/view/Production/"
+    },
+    {
+      "_class": "hudson.model.ListView",
+      "name": "QA",
+      "url": "https://jenkins.gloo.us/view/QA/"
+    },
+    {
+      "_class": "hudson.plugins.view.dashboard.Dashboard",
+      "name": "ScheduledTasks",
+      "url": "https://jenkins.gloo.us/view/ScheduledTasks/"
+    },
+    {
+      "_class": "hudson.plugins.view.dashboard.Dashboard",
+      "name": "Staging",
+      "url": "https://jenkins.gloo.us/view/Staging/"
+    },
+    {
+      "_class": "hudson.plugins.view.dashboard.Dashboard",
+      "name": "Test",
+      "url": "https://jenkins.gloo.us/view/Test/"
+    },
+    {
+      "_class": "hudson.model.ListView",
+      "name": "UI Test",
+      "url": "https://jenkins.gloo.us/view/UI%20Test/"
+    },
+    {
+      "_class": "hudson.model.AllView",
+      "name": "all",
+      "url": "https://jenkins.gloo.us/"
+    }
+  ]
+}

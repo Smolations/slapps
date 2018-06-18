@@ -1,0 +1,25 @@
+#/bin/sh -e
+
+TRAVIS_BRANCH=origin/master
+
+modifiedPackage=$(git diff --name-only --diff-filter=M $TRAVIS_BRANCH..HEAD | grep "package.json")
+
+message="Your package.json should get a version bump. Execute one of the \`npm run bump*\` scripts."
+
+if [ -z "$modifiedPackage" ]; then
+  echo "[package.json UNCHANGED] $message"
+  exit 1
+fi
+
+# checking package.json diff
+echo "Checking diff for package.json to see if version changed..."
+git diff $TRAVIS_BRANCH..HEAD -- package.json
+
+versionChange=$(git diff $TRAVIS_BRANCH..HEAD -- package.json | egrep '^\+ +"version"')
+
+if [ -z "$versionChange" ]; then
+  echo "[package.json version UNCHANGED] $message"
+  exit 2
+fi
+
+exit 0

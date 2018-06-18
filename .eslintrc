@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    // Custom overrides
+    "import/extensions": "off",
+    "import/first": "off",
+    "import/no-unresolved": "off",
+    "max-len": ["error", 150, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }], // Best Practices group decided to alter this
+    "no-console": "error", // If you need to leave a log in the code, use $log instead
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "no-unused-vars": ["error", { "vars": "local", "args": "after-used" }],
+  }
+}

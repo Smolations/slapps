@@ -1,0 +1,136 @@
+{
+  "_class": "hudson.model.FreeStyleBuild",
+  "actions": [
+    {
+      "_class": "hudson.model.ParametersAction",
+      "parameters": [
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "infra_version",
+          "value": "master"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "task_configure_os",
+          "value": false
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "task_configure_polymer",
+          "value": false
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "data_import",
+          "value": false
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "data_reindex",
+          "value": false
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "task_deploy",
+          "value": true
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "clean_deploy",
+          "value": "false"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "polymer_version",
+          "value": "feature/rss-feeds.edit-and-delete"
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "restart",
+          "value": false
+        }
+      ]
+    },
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Chris Smola",
+          "userId": "csmola@tangogroup.com",
+          "userName": "Chris Smola"
+        }
+      ]
+    },
+    {},
+    {
+      "_class": "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName": {
+        "origin/master": {
+          "_class": "hudson.plugins.git.util.Build",
+          "buildNumber": 98,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "33e0b4f3433e3f1813171b6aca205f09358db442",
+            "branch": [
+              {
+                "SHA1": "33e0b4f3433e3f1813171b6aca205f09358db442",
+                "name": "origin/master"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "33e0b4f3433e3f1813171b6aca205f09358db442",
+            "branch": [
+              {
+                "SHA1": "33e0b4f3433e3f1813171b6aca205f09358db442",
+                "name": "origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "33e0b4f3433e3f1813171b6aca205f09358db442",
+        "branch": [
+          {
+            "SHA1": "33e0b4f3433e3f1813171b6aca205f09358db442",
+            "name": "origin/master"
+          }
+        ]
+      },
+      "remoteUrls": [
+        "git@github.com:TangoGroup/ansible-polymer.git"
+      ],
+      "scmName": ""
+    },
+    {
+      "_class": "hudson.plugins.git.GitTagAction"
+    },
+    {},
+    {},
+    {}
+  ],
+  "artifacts": [],
+  "building": true,
+  "description": null,
+  "displayName": "#98",
+  "duration": 0,
+  "estimatedDuration": 456396,
+  "executor": {},
+  "fullDisplayName": "polymer-qa3.dev.gloo.us #98",
+  "id": "98",
+  "keepLog": false,
+  "number": 98,
+  "queueId": 1706,
+  "result": null,
+  "timestamp": 1523655525703,
+  "url": "https://jenkins.gloo.us/job/polymer-qa3.dev.gloo.us/98/",
+  "builtOn": "",
+  "changeSet": {
+    "_class": "hudson.plugins.git.GitChangeSetList",
+    "items": [],
+    "kind": "git"
+  },
+  "culprits": []
+}

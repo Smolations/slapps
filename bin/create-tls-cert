@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "Creating tls-cert for ${NODE_ENV}"
+
+rm -rf config/$NODE_ENV*.pem;
+rm -rf config/$NODE_ENV*.pkcs12;
+
+openssl genrsa -out config/$NODE_ENV.key.pem 2048;
+openssl req -new -sha256 -subj "/C=US/ST=CO/L=Superior/O=Dis/CN=nectarbot.herokuapp.com" -key config/$NODE_ENV.key.pem -out config/$NODE_ENV.csr.pem;
+openssl x509 -req -in config/$NODE_ENV.csr.pem -signkey config/$NODE_ENV.key.pem -out config/$NODE_ENV.cert.pem;
+openssl pkcs12 -export -passout pass: -in config/$NODE_ENV.cert.pem -inkey config/$NODE_ENV.key.pem -out config/$NODE_ENV.pkcs12;
+
+rm config/$NODE_ENV.cert.pem config/$NODE_ENV.csr.pem config/$NODE_ENV.key.pem;

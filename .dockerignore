@@ -1,0 +1,7 @@
+.git
+.travis
+examples
+log/*.log
+log/.audit.json
+node_modules
+spec

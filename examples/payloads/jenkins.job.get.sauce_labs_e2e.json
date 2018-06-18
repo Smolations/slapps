@@ -1,0 +1,959 @@
+{
+  "_class": "hudson.model.FreeStyleProject",
+  "actions": [
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "mainline"
+          },
+          "description": "The tree-ish version to checkout. The state of the e2e test files in this ref will be what is run in sauce labs.",
+          "name": "polymer_version",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "username_28415"
+          },
+          "description": "The user on the platform for which tests will be run. This user is needed for the initial login action. This user will be used when browser-specific credentials are not provided.",
+          "name": "E2E_USERNAME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME user.",
+          "name": "E2E_PASSWORD",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "username_385559"
+          },
+          "description": "The user on the platform for which IE tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_IE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_IE user.",
+          "name": "E2E_PASSWORD_IE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "username_387289"
+          },
+          "description": "The user on the platform for which Edge tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_EDGE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_EDGE user.",
+          "name": "E2E_PASSWORD_EDGE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "username_387290"
+          },
+          "description": "The user on the platform for which Safari tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_SAFARI",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_SAFARI user.",
+          "name": "E2E_PASSWORD_SAFARI",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "username_387292"
+          },
+          "description": "The user on the platform for which Firefox tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_FIREFOX",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_FIREFOX user.",
+          "name": "E2E_PASSWORD_FIREFOX",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "username_387295"
+          },
+          "description": "The user on the platform for which Chrome tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_CHROME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_CHROME user.",
+          "name": "E2E_PASSWORD_CHROME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": ""
+          },
+          "description": "The publicly available URL that sauce labs will run tests against. You can enter the full url (e.g. \"https://polymer.gloo.us\") or, for convenience, a shortcut of the server (e.g. \"qa4\", \"uitest2\", \"staging\", \"prod\", \"production\").",
+          "name": "E2E_URL",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": ""
+          },
+          "description": "By default, the devops sauce labs account credentials will be used. If, however, you wish to review results you can enter your own account username here (and access key below).",
+          "name": "E2E_SAUCE_USERNAME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "value": ""
+          },
+          "description": "By default, the devops sauce labs account credentials will be used. If, however, you wish to review results you can enter your own account access key here (and username above).",
+          "name": "E2E_SAUCE_ACCESS_KEY",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.plugins.sauce_ondemand.SauceParameterDefinition",
+          "defaultParameterValue": null,
+          "description": "Select the browser(s) that should be used when tests are run with Sauce Labs",
+          "name": "Sauce Labs Browsers",
+          "type": "SauceParameterDefinition"
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "_class": "org.jenkins.ci.plugins.jenkinslint.JobLintAction"
+    },
+    {},
+    {},
+    {
+      "_class": "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description": "This job allows for sauce labs tests to be run against a publicly available url.\r\n\r\nNOTE: If you do *not* select any browsers from the browser list, your tests will run in the default set of browsers, which are officially supported by Gloo.",
+  "displayName": "sauce_labs_e2e",
+  "displayNameOrNull": null,
+  "fullDisplayName": "sauce_labs_e2e",
+  "fullName": "sauce_labs_e2e",
+  "name": "sauce_labs_e2e",
+  "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/",
+  "buildable": true,
+  "builds": [
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1148,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1148/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1147,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1147/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1146,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1146/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1145,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1145/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1144,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1144/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1143,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1143/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1142,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1142/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1141,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1141/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1140,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1140/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1139,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1139/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1138,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1138/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1137,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1137/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1136,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1136/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1135,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1135/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1134,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1134/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1133,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1133/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1132,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1132/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1131,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1131/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1130,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1130/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1129,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1129/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1128,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1128/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1127,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1127/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1126,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1126/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1125,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1125/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1124,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1124/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1123,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1123/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1122,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1122/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1121,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1121/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1120,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1120/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1119,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1119/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1118,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1118/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1117,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1117/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1116,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1116/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1115,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1115/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1114,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1114/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1113,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1113/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1112,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1112/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1111,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1111/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1110,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1110/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1109,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1109/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1108,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1108/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1107,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1107/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1106,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1106/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1105,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1105/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1104,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1104/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1103,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1103/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1102,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1102/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1101,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1101/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1100,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1100/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1099,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1099/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1098,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1098/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1097,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1097/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1096,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1096/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1095,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1095/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1094,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1094/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1093,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1093/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1092,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1092/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1091,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1091/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1090,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1090/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1089,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1089/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1088,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1088/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1087,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1087/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1086,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1086/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1085,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1085/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1084,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1084/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1083,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1083/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1082,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1082/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1081,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1081/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1080,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1080/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1079,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1079/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1078,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1078/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1077,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1077/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1076,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1076/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1075,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1075/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1074,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1074/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1073,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1073/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1072,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1072/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1071,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1071/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1070,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1070/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1069,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1069/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1068,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1068/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1067,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1067/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1066,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1066/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1065,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1065/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1064,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1064/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1063,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1063/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1062,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1062/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1061,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1061/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1060,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1060/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1059,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1059/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1058,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1058/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1057,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1057/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1056,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1056/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1055,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1055/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1054,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1054/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1053,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1053/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1052,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1052/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1051,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1051/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1050,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1050/"
+    },
+    {
+      "_class": "hudson.model.FreeStyleBuild",
+      "number": 1049,
+      "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1049/"
+    }
+  ],
+  "color": "red",
+  "firstBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1/"
+  },
+  "healthReport": [
+    {
+      "description": "Build stability: All recent builds failed.",
+      "iconClassName": "icon-health-00to19",
+      "iconUrl": "health-00to19.png",
+      "score": 0
+    }
+  ],
+  "inQueue": false,
+  "keepDependencies": false,
+  "lastBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1148,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1148/"
+  },
+  "lastCompletedBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1148,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1148/"
+  },
+  "lastFailedBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1148,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1148/"
+  },
+  "lastStableBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1068,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1068/"
+  },
+  "lastSuccessfulBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1068,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1068/"
+  },
+  "lastUnstableBuild": null,
+  "lastUnsuccessfulBuild": {
+    "_class": "hudson.model.FreeStyleBuild",
+    "number": 1148,
+    "url": "https://jenkins.gloo.us/job/sauce_labs_e2e/1148/"
+  },
+  "nextBuildNumber": 1149,
+  "property": [
+    {
+      "_class": "hudson.plugins.buildblocker.BuildBlockerProperty"
+    },
+    {
+      "_class": "com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty"
+    },
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "polymer_version",
+            "value": "mainline"
+          },
+          "description": "The tree-ish version to checkout. The state of the e2e test files in this ref will be what is run in sauce labs.",
+          "name": "polymer_version",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_USERNAME",
+            "value": "username_28415"
+          },
+          "description": "The user on the platform for which tests will be run. This user is needed for the initial login action. This user will be used when browser-specific credentials are not provided.",
+          "name": "E2E_USERNAME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_PASSWORD",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME user.",
+          "name": "E2E_PASSWORD",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_USERNAME_IE",
+            "value": "username_385559"
+          },
+          "description": "The user on the platform for which IE tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_IE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_PASSWORD_IE",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_IE user.",
+          "name": "E2E_PASSWORD_IE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_USERNAME_EDGE",
+            "value": "username_387289"
+          },
+          "description": "The user on the platform for which Edge tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_EDGE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_PASSWORD_EDGE",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_EDGE user.",
+          "name": "E2E_PASSWORD_EDGE",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_USERNAME_SAFARI",
+            "value": "username_387290"
+          },
+          "description": "The user on the platform for which Safari tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_SAFARI",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_PASSWORD_SAFARI",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_SAFARI user.",
+          "name": "E2E_PASSWORD_SAFARI",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_USERNAME_FIREFOX",
+            "value": "username_387292"
+          },
+          "description": "The user on the platform for which Firefox tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_FIREFOX",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_PASSWORD_FIREFOX",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_FIREFOX user.",
+          "name": "E2E_PASSWORD_FIREFOX",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_USERNAME_CHROME",
+            "value": "username_387295"
+          },
+          "description": "The user on the platform for which Chrome tests will be run. This user is needed for the initial login action.",
+          "name": "E2E_USERNAME_CHROME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_PASSWORD_CHROME",
+            "value": "gloo12345"
+          },
+          "description": "The password for the E2E_USERNAME_CHROME user.",
+          "name": "E2E_PASSWORD_CHROME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_URL",
+            "value": ""
+          },
+          "description": "The publicly available URL that sauce labs will run tests against. You can enter the full url (e.g. \"https://polymer.gloo.us\") or, for convenience, a shortcut of the server (e.g. \"qa4\", \"uitest2\", \"staging\", \"prod\", \"production\").",
+          "name": "E2E_URL",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_SAUCE_USERNAME",
+            "value": ""
+          },
+          "description": "By default, the devops sauce labs account credentials will be used. If, however, you wish to review results you can enter your own account username here (and access key below).",
+          "name": "E2E_SAUCE_USERNAME",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "E2E_SAUCE_ACCESS_KEY",
+            "value": ""
+          },
+          "description": "By default, the devops sauce labs account credentials will be used. If, however, you wish to review results you can enter your own account access key here (and username above).",
+          "name": "E2E_SAUCE_ACCESS_KEY",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.plugins.sauce_ondemand.SauceParameterDefinition",
+          "defaultParameterValue": null,
+          "description": "Select the browser(s) that should be used when tests are run with Sauce Labs",
+          "name": "Sauce Labs Browsers",
+          "type": "SauceParameterDefinition"
+        }
+      ]
+    },
+    {
+      "_class": "org.jenkinsci.plugins.envinject.EnvInjectJobProperty"
+    }
+  ],
+  "queueItem": null,
+  "concurrentBuild": false,
+  "downstreamProjects": [],
+  "labelExpression": null,
+  "scm": {
+    "_class": "hudson.plugins.git.GitSCM"
+  },
+  "upstreamProjects": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "polymer-staging.dev.gloo.us.SauceLabs",
+      "url": "https://jenkins.gloo.us/job/polymer-staging.dev.gloo.us.SauceLabs/",
+      "color": "red"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+/**
+ *  @external EventEmitter
+ *  @see https://nodejs.org/docs/latest-v8.x/api/events.html#events_class_eventemitter
+ */
+/**
+ *  @external crypto
+ *  @see https://nodejs.org/docs/latest-v8.x/api/crypto.html#crypto_crypto
+ */
+/**
+ *  @external http
+ *  @see https://nodejs.org/docs/latest-v8.x/api/http.html#http_http
+ */
+/**
+ *  @external https
+ *  @see https://nodejs.org/docs/latest-v8.x/api/https.html#https_https
+ */
+/**
+ *  @external querystring
+ *  @see https://nodejs.org/docs/latest-v8.x/api/querystring.html#querystring_query_string
+ */
+/**
+ *  @external url
+ *  @see https://nodejs.org/docs/latest-v8.x/api/url.html#url_url
+ */
+
+/**
+ *  @external Map
+ *  @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+ */
+
+/**
+ *  @external github-api
+ *  @see {@link https://github.com/octokit/rest.js|Github Project}
+ *  @see {@link https://octokit.github.io/rest.js/|API Docs}
+ */
+/**
+ *  @external jenkins
+ *  @see https://github.com/silas/node-jenkins
+ */
+/**
+ *  LokiJS is a document oriented database written in javascript, published under
+ *  MIT License. Its purpose is to store javascript objects as documents in a nosql
+ *  fashion and retrieve them with a similar mechanism. Runs in node (including
+ *  cordova/phonegap and node-webkit), nativescript and the browser.
+ *  @external LokiJS
+ *  @see https://github.com/techfort/LokiJS
+ */
+/**
+ *  Yargs helps you build interactive command line tools, by parsing arguments
+ *  and generating an elegant user interface.
+ *  @external yargs
+ *  @see https://github.com/yargs/yargs/blob/master/docs/api.md
+ */
+/**
+ *  The given resources are the most applicable when it comes to communication
+ *  between a Slack app and this node app.
+ *
+ *  @external slackapi
+ *  @see {@link https://github.com/slackapi/node-slack-sdk|@slack/client on Github}
+ *  @see {@link https://api.slack.com/methods|WebClient Methods}
+ *  @see {@link http://slackapi.github.io/node-slack-sdk/reference/RTMClient|RTMClient API Docs}
+ *  @see {@link https://api.slack.com/rtm|RTM Events}
+ *  @see {@link https://api.slack.com/docs/message-formatting|Message Formatting}
+ */

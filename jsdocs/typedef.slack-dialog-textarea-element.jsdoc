@@ -1,0 +1,24 @@
+/**
+ *  Text Areas are best when the expected answer is long — over 150 characters or so —. It is best
+ *  for open-ended and qualitative questions.
+ *
+ *  @typedef {object} slackDialogTextareaElement
+ *  @property {string}  hint        Helpful text provided to assist users in answering a question.
+ *                                  Up to 150 characters.
+ *  @property {string}  label       Label displayed to user. Required. No more than 24 characters.
+ *  @property {number}  max_length  Maximum input length allowed for element. 0-3000 characters.
+ *                                  Defaults to 3000.
+ *  @property {number}  min_length  Minimum input length allowed for element. 1-3000 characters.
+ *                                  Defaults to 0.
+ *  @property {string}  name        Name of form element. Required. No more than 300 characters.
+ *  @property {boolean} optional    Provide `true` when the form element is not required. By default,
+ *                                  form elements are required.
+ *  @property {string}  placeholder A string displayed as needed to help guide users in completing
+ *                                  the element. 150 character maximum.
+ *  @property {string}  subtype     A subtype for this text area, just in case you need a lot of
+ *                                  space for them. `email`, `number`, `tel`, or `url`.
+ *  @property {string}  type        For a text area, the type is always `textarea`. It's required.
+ *  @property {string}  value       A default value for this field. Up to 3000 characters.
+ *
+ *  @see https://api.slack.com/dialogs#textarea_elements
+ */

@@ -77,7 +77,7 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
    *  properties will be set to `null` when the `data_source` is anything
    *  other than `static` or `default`.
    *
-   *  @returns {Array<attachment>}
+   *  @returns {array.<attachment>}
    */
   build() {
     this[_addAttachment]();
@@ -109,10 +109,10 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
    *  Adds a link button to the bottom of an attachment.
    *
    *  @param {object} options
-   *  @param {string} options.name    See {@link slackInteractiveMessageAction}.
-   *  @param {string} options.text    See {@link slackInteractiveMessageAction}.
-   *  @param {string} options.value   See {@link slackInteractiveMessageAction}.
-   *  @param {string} [options.style] See {@link slackInteractiveMessageAction}.
+   *  @param {string} options.name    See {@link attachmentAction}.
+   *  @param {string} options.text    See {@link attachmentAction}.
+   *  @param {string} options.value   See {@link attachmentAction}.
+   *  @param {string} [options.style] See {@link attachmentAction}.
    *  @returns {InteractionBuilder}
    */
   button({ name, text, value, style } = {}) {
@@ -147,7 +147,7 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
    *  @param {string} color
    *  @returns {InteractionBuilder}
    *
-   *  @see slackInteractiveMessageAttachment
+   *  @see attachment
    */
   color(color) {
     return this[_merge]({ color });
@@ -157,10 +157,10 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
    *  Add confirmation dialog to the most recently-added action.
    *
    *  @param {object} options
-   *  @param {string} options.text                   See {@link slackInteractiveMessageConfirmation}.
-   *  @param {string} [options.title]                See {@link slackInteractiveMessageConfirmation}.
-   *  @param {string} [options.okText='Okay']        See {@link slackInteractiveMessageConfirmation}.
-   *  @param {string} [options.dismissText='Cancel'] See {@link slackInteractiveMessageConfirmation}.
+   *  @param {string} options.text                   See {@link attachmentActionConfirmation}.
+   *  @param {string} [options.title]                See {@link attachmentActionConfirmation}.
+   *  @param {string} [options.okText='Okay']        See {@link attachmentActionConfirmation}.
+   *  @param {string} [options.dismissText='Cancel'] See {@link attachmentActionConfirmation}.
    *  @returns {InteractionBuilder}
    */
   confirm({ title, text, okText = 'Okay', dismissText = 'Cancel' } = {}) {
@@ -215,7 +215,7 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
    *  Adds options to the most recently added action of type `select`. If no
    *  action of that type has been added, then it's a noop.
    *
-   *  @param {array.<slackInteractiveMessageSelectOption>|array.<slackInteractiveMessageSelectOptionGroup>} options=[]
+   *  @param {array.<attachmentActionSelectOption>|array.<attachmentActionSelectOptionGroup>} options=[]
    *  @returns {InteractionBuilder}
    */
   options(options = []) {
@@ -258,20 +258,18 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
    *  chaining {@see InteractionBuilder#options} calls.
    *
    *  @param {object} options
-   *  @param {string} options.name                  See {@link slackInteractiveMessageAction}.
-   *  @param {string} options.text                  See {@link slackInteractiveMessageAction}.
-   *  @param {string} [options.value]               See {@link slackInteractiveMessageAction}.
-   *  @param {string} [options.dataSource='static'] See {@link slackInteractiveMessageAction}.
-   *  @param {array}  [options.selected=[]]         See {@link slackInteractiveMessageAction}.
-   *  @param {number} [options.minQueryLength=0]    See {@link slackInteractiveMessageAction}.
+   *  @param {string} options.name                  See {@link attachmentAction}.
+   *  @param {string} options.text                  See {@link attachmentAction}.
+   *  @param {string} [options.dataSource='static'] See {@link attachmentAction}.
+   *  @param {array}  [options.selected=[]]         See {@link attachmentAction}.
+   *  @param {number} [options.minQueryLength=0]    See {@link attachmentAction}.
    *  @returns {InteractionBuilder}
    */
-  select({ name, text, value, dataSource = 'static', selected = [], minQueryLength = 0 } = {}) {
+  select({ name, text, dataSource = 'static', selected = [], minQueryLength = 0 } = {}) {
     const select = {
       type: 'select',
       name,
       text,
-      value,
       options: [],
       option_groups: [],
       data_source: dataSource,
@@ -403,163 +401,5 @@ class InteractionBuilder extends Identifyable(Logable(Envable())) {
   }
 }
 
+
 module.exports = InteractionBuilder;
-
-
-/**
- *  @typedef {object} slackInteractiveMessage
- *  @property {string}  text       The basic text of the message. Only required if the
- *                                 message contains zero attachments.
- *  @property {array.<attachment>} attachments Provide a JSON array of `attachment` objects.
- *                                 Adds additional components to the message. Messages
- *                                 should contain no more than 20 attachments.
- *  @property {string}  thread_ts  When replying to a parent message, this value is the
- *                                 `ts` value of the parent message to the thread.
- *  @property {string}  response_type  Expects one of two values:
- *    - `in_channel`: display the message to all users in the channel where a message button
- *    was clicked. Messages sent in response to invoked button actions are set to `in_channel`
- *    by default.
- *    - `ephemeral`:  display the message only to the user who clicked a message button.
- *    Messages sent in response to Slash commands are set to `ephemeral` by default.
- *    This field cannot be specified for a brand new message and must be used only in response
- *    to the execution of message button action or a slash command response. Once a
- *    `response_type` is set, it cannot be changed when updating the message.
- *  @property {boolean} replace_original  Used only when creating messages in response to a
- *                                 button action invocation. When set to `true`, the inciting
- *                                 message will be replaced by this message you're providing.
- *                                 When `false`, the message you're providing is considered a
- *                                 brand new message.
- *  @property {boolean} delete_original  Used only when creating messages in response to a
- *                                 button action invocation. When set to `true`, the inciting
- *                                 message will be deleted and if a message is provided, it
- *                                 will be posted as a brand new message.
- */
-/**
- *  Attachments house message buttons and/or menus.
- *
- *  @typedef {object} slackInteractiveMessageAttachment
- *  @property {string} fallback                       A plaintext message displayed to users using an
- *                                                    interface that does not support attachments or
- *                                                    interactive messages. Consider leaving a URL
- *                                                    pointing to your service if the potential message
- *                                                    actions are representable outside of Slack.
- *                                                    Otherwise, let folks know what they are missing.
- *  @property {string} callback_id                    The provided string will act as a unique identifier
- *                                                    for the collection of buttons within the attachment.
- *                                                    It will be sent back to your message button action
- *                                                    URL with each invoked action. This field is required
- *                                                    when the attachment contains message buttons. It is
- *                                                    key to identifying the interaction you're working with.
- *  @property {array.<slackInteractiveMessageAction>} actions=[] A collection of actions (buttons or menus) to
- *                                                    include in the attachment. Required when using message
- *                                                    buttons or message menus. A maximum of 5 actions per
- *                                                    attachment may be provided.
- *  @property {string} [title]                        Provide this attachment with a visual header by
- *                                                    providing a short string here.
- *  @property {string} [color]                        Used to visually distinguish an attachment from other
- *                                                    messages. Accepts hex values and a few named colors
- *                                                    Use sparingly and according to best practices.
- *  @property {string} [attachment_type='default']    Even for message menus, remains the default value `default`.
- */
-/**
- *  The actions you provide will be rendered as message buttons or menus to users.
- *
- *  @typedef {object} slackInteractiveMessageAction
- *  @property {string} name            Provide a string to give this specific action a name.
- *                                     The name will be returned to your Action URL along
- *                                     with the message's `callback_id` when this action is
- *                                     invoked. Use it to identify this particular response
- *                                     path. **If multiple actions share the same name, only
- *                                     one of them can be in a triggered state.**
- *  @property {string} text            The user-facing label for the message button or menu
- *                                     representing this action. Cannot contain markup. Best
- *                                     to keep these short and decisive. Use a maximum of
- *                                     30 characters or so for best results across form
- *                                     factors.
- *  @property {string} type            Provide `button` when this action is a message button
- *                                     or provide `select` when the action is a message menu.
- *  @property {string} [value]         Provide a string identifying this specific action. It
- *                                     will be sent to your Action URL along with the `name`
- *                                     and attachment's `callback_id`. If providing multiple
- *                                     actions with the same name, `value` can be strategically
- *                                     used to differentiate intent. Your value may contain
- *                                     up to 2000 characters.
- *  @property {slackInteractiveMessageConfirmation} [confirm] If you provide a JSON hash of
- *                                     confirmation fields, your button or menu will pop up
- *                                     a dialog with your indicated text and choices, giving
- *                                     them one last chance to avoid a destructive action or
- *                                     other undesired outcome.
- *  @property {string} [style]         Used only with message buttons, this decorates buttons
- *                                     with extra visual importance, which is especially
- *                                     useful when providing logical default action or
- *                                     highlighting a destructive activity.
- *    - `default`: Yes, it's the default. Buttons will look simple.
- *    - `primary`: Use this sparingly, when the button represents a key action to accomplish.
- *      You should probably only ever have one primary button within a set.
- *    - `danger`: Use this when the consequence of the button click will result in the
- *      destruction of something, like a piece of data stored on your servers. Use even
- *      more sparingly than primary.
- *  @property {array.<slackInteractiveMessageSelectOption>} [options] Used only with message menus.
- *                                     The individual options to appear in this menu,
- *                                     provided as an array of option fields. Required
- *                                     when `data_source` is `static` or otherwise unspecified.
- *                                     A maximum of 100 options can be provided in each
- *                                     menu.
- *  @property {array.<slackInteractiveMessageSelectOptionGroup>} [option_groups] Used only with
- *                                     message menus. An alternate, semi-hierarchal way to list
- *                                     available options. Provide an array of option group
- *                                     definitions. This replaces and supersedes the `options` array.
- *  @property {string} [data_source]   Accepts `static`, `users`, `channels`, `conversations`, or
- *                                     `external`. Our clever default behavior is `static`,
- *                                     which means the menu's options are provided directly
- *                                     in the posted message under `options`. Defaults to
- *                                     `static`. Example: `"channels"`
- *  @property {array} [selected_options] If provided, the first element of this array will be
- *                                     set as the pre-selected option for this menu. Any
- *                                     additional elements will be ignored.
- *  The selected option's `value` field is contextual based on menu type and is always required:
- *    - For menus of type `static` (the default) this should be in the list of options included in
- *      the action.
- *    - For menus of type `users`, `channels`, or `conversations`, this should be a valid ID of
- *      the corresponding type.
- *    - For menus of type `external` this can be any value, up to a couple thousand characters.
- *  @property {integer} [min_query_length] Only applies when `data_source` is set to `external`. If
- *                                     present, Slack will wait till the specified number of
- *                                     characters are entered before sending a request to your
- *                                     app's external suggestions API endpoint. Defaults to `1`.
- */
-/**
- *  Protect users from destructive actions or particularly distinguished decisions by asking them to
- *  confirm their button click one more time. Use confirmation dialogs with care.
- *
- *  @typedef {object} slackInteractiveMessageConfirmation
- *  @property {string} [title]      Title the pop up window. Please be brief.
- *  @property {string} text         Describe in detail the consequences of the action and contextualize
- *                                  your button text choices. Use a maximum of 30 characters or so for
- *                                  best results across form factors.
- *  @property {string} ok_text      The text label for the button to continue with an action. Keep it
- *                                  short. Defaults to `Okay`.
- *  @property {string} dismiss_text The text label for the button to cancel the action. Keep it short.
- *                                  Defaults to `Cancel`.
- */
-/**
- *  @typedef {object} slackInteractiveMessageSelectOption
- *  @property {string} text          A short, user-facing string to label this option to users.
- *                                   Use a maximum of 30 characters or so for best results across,
- *                                   you guessed it, form factors.
- *  @property {string} value         A short string that identifies this particular option to your
- *                                   application. It will be sent to your Action URL when this
- *                                   option is selected. While there's no limit to the value of
- *                                   your Slack app, this value may contain up to only 2000 characters.
- *  @property {string} [description] A user-facing string that provides more details about this option.
- *                                   Also should contain up to 30 characters.
- */
-/**
- *  @typedef {object} slackInteractiveMessageSelectOptionGroup
- *  @property {string} text A short, user-facing string to label this option to users.
- *                          Use a maximum of 30 characters or so for best results across,
- *                          you guessed it, form factors.
- *  @property {array.<slackInteractiveMessageSelectOption>} options The individual options to
- *                          appear in this message menu, provided as an array of option fields.
- *                          Required when `data_source` is `default` or otherwise unspecified.
- */

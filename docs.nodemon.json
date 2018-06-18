@@ -1,11 +1,12 @@
 {
   "watch": [
     "docs_assets/",
+    "jsdocs/",
     "interfaces/",
     "mixins/",
     "models/",
     "tutorials/"
   ],
-  "ext": "css,js,json,md",
+  "ext": "css,js,json,md,jsdoc",
   "exec": "npm run docs"
 }

@@ -6,14 +6,6 @@ const Logable = require('../mixins/logable');
 
 const ObjectValidator = require('./object-validator');
 
-const ActionConfirmation = require('./attachments/action-confirmation');
-const Attachment = require('./attachments/attachment');
-const Field = require('./attachments/field');
-const InteractiveButtonAction = require('./attachments/interactive-button-action');
-const LinkButtonAction = require('./attachments/link-button-action');
-const SelectAction = require('./attachments/select-action');
-const SelectActionOption = require('./attachments/select-action-option');
-const SelectActionOptionGroup = require('./attachments/select-action-option-group');
 
 const _addAttachment = Symbol('addAttachment');
 const _attachments = Symbol('attachments');
@@ -21,8 +13,6 @@ const _attachment = Symbol('attachment');
 const _merge = Symbol('merge');
 const _template = Symbol('template');
 const _validate = Symbol('validate');
-const _validateAndAddOptions = Symbol('validateAndAddOptions');
-const _validateAndAddOptionGroups = Symbol('validateAndAddOptionGroups');
 
 
 /**
@@ -56,7 +46,7 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
   constructor({ ...superOpts } = {}) {
     super(superOpts);
     this[_attachments] = [];
-    this[_attachment] = new Attachment();
+    this[_attachment] = this[_template]();
   }
 
 
@@ -73,7 +63,7 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *                               work if author name is present.
    *  @returns {AttachmentsBuilder}
    */
-  author({ name, link, icon }) {
+  author({ name, link, icon } = {}) {
     return this[_merge]({ author_name: name, author_link: link, author_icon: icon });
   }
 
@@ -97,18 +87,8 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @returns {array.<attachment>}
    */
   build() {
-    let allValid = true;
-    let attachments;
-
     this[_addAttachment]();
-
-    allValid = this[_attachments].reduce((isValid, att) => isValid && att.isValid, true);
-
-    if (!allValid) {
-      throw new SyntaxError('One or more attachments invalid!');
-    }
-
-    attachments = this[_attachments].slice(0);
+    const attachments = this[_attachments].slice(0);
     this[_attachments] = [];
 
     return attachments;
@@ -123,31 +103,10 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @param {string} options.style One of `primary` or `danger`.
    *  @returns {AttachmentsBuilder}
    */
-  buttonInteraction({ name, text, value, style }) {
-    const newButton = new InteractiveButtonAction({ name, text, value, style });
-    // const newButton = { type: 'button', text, url, style };
+  button({ text, url, style} = {}) {
+    const newButton = { type: 'button', text, url, style };
     this[_attachment].actions.push(newButton);
     return this;
-  }
-
-  /**
-   *  Adds a link button to the bottom of an attachment.
-   *
-   *  @param {object} options
-   *  @param {string} options.text
-   *  @param {string} options.url
-   *  @param {string} options.style One of `primary` or `danger`.
-   *  @returns {AttachmentsBuilder}
-   */
-  buttonLink({ text, url, style }) {
-    const newButton = new LinkButtonAction({ text, url, style});
-    // const newButton = { type: 'button', text, url, style };
-    this[_attachment].actions.push(newButton);
-    return this;
-  }
-
-  callbackId(callbackId) {
-    return this[_merge]({ callback_id: callbackId });
   }
 
   /**
@@ -185,8 +144,7 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @returns {AttachmentsBuilder}
    */
   field({ title, value, short = false } = {}) {
-    const field = new Field({ title, value, short });
-    this[_attachment].fields.push(field);
+    this[_attachment].fields.push({ title, value, short });
     return this;
   }
 
@@ -205,8 +163,14 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @param {string} options.text
    *  @returns {AttachmentsBuilder}
    */
-  footer({ text, icon }) {
-    return this[_merge]({ footer: text, footer_icon: icon });
+  footer({ text, icon } = {}) {
+    if (text) {
+      this[_merge]({ footer: text });
+    }
+    if (icon) {
+      this[_merge]({ footer_icon: icon });
+    }
+    return this;
   }
 
   /**
@@ -230,53 +194,6 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
   }
 
   /**
-   *  Adds provided options (or option groups) to an existing select action with
-   *  the name `selectName` or to the most recently added select action if `selectName`
-   *  is not provided.
-   *
-   *  @param {array.<attachmentActionSelectOption>|array.<SelectActionOption>|array.<attachmentActionSelectOptionGroup>|array.<SelectActionOptionGroup>} options=[]
-   *  @param {string} [selectName=null] If there are existing `select` elements, the
-   *                                    options will be added to it if `selectName` matches
-   *                                    the name given when it was created.
-   *  @returns {AttachmentsBuilder}
-   *
-   *  @throws {Error} If there are no select actions in the working attachment.
-   *  @throws {SyntaxError} If `options` array is empty.
-   *  @throws {SyntaxError} If `selectName` is given but no matching select action is found.
-   */
-  options(options = [], selectName = null) {
-    const selects = this[_attachment].actions.filter(action => action.type === 'select');
-    const [firstOpt] = options;
-    let allValid;
-    let lastSelect;
-    let targetSelect;
-    console.log(this[_attachment].actions)
-
-    if (!selects.length) {
-      throw new Error('No select elements found in working attachment!');
-    } else if (!firstOpt) {
-      throw new SyntaxError('No options provided!');
-    } else {
-      if (_.isString(selectName)) {
-        targetSelect = selects.find(select => select.name === selectName);
-        if (!targetSelect) {
-          throw new SyntaxError(`Unable to find select with name "${selectName}" to which options should be added!`);
-        }
-      } else {
-        targetSelect = selects.slice(-1).pop();
-      }
-
-      // check for options_groups
-      if (Array.isArray(firstOpt.options)) {
-        this[_validateAndAddOptionGroups](options, targetSelect);
-      } else {
-        this[_validateAndAddOptions](options, targetSelect);
-      }
-    }
-    return this;
-  }
-
-  /**
    *  This is optional text that appears above the message attachment block.
    *
    *  @param {string} pretext
@@ -285,32 +202,6 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
   pretext(pretext) {
     return this[_merge]({ pretext });
   }
-
-  /**
-   *  Adds a select element to the interaction. Add options to the element by
-   *  chaining {@see AttachmentsBuilder#options} calls.
-   *
-   *  @param {object} options
-   *  @param {string} options.name                  See {@link attachmentActionSelect}.
-   *  @param {string} options.text                  See {@link attachmentActionSelect}.
-   *  @param {string} [options.dataSource='static'] See {@link attachmentActionSelect}.
-   *  @param {number} [options.minQueryLength=1]    See {@link attachmentActionSelect}.
-   *  @returns {AttachmentsBuilder}
-   */
-  select({ name, text, dataSource = 'static', minQueryLength = 1 } = {}) {
-    const selectOpts = {
-      name,
-      text,
-      dataSource,
-      minQueryLength,
-    };
-    const select = new SelectAction(selectOpts);
-    this[_attachment].actions.push(select);
-    return this;
-  }
-
-  // how to handle?
-  selectedOption() {}
 
   /**
    *  This is the main text in a message attachment, and can contain standard
@@ -336,7 +227,7 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @param {string} options.link
    *  @returns {AttachmentsBuilder}
    */
-  title({ title, link }) {
+  title({ title, link } = {}) {
     return this[_merge]({ title, title_link: link });
   }
 
@@ -356,40 +247,6 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
 
 
   /**
-   *  @private
-   */
-  [_validateAndAddOptions](options, select) {
-    const wrappedOpts = options.map(opt => _.isPlainObject(opt) ? new SelectActionOption(opt) : opt);
-    const allValid = wrappedOpts.reduce((isValid, opt) => {
-      const isClassInstance = opt instanceof SelectActionOption;
-      console.log(`isClassInstance = ${isClassInstance}`);
-      console.log(`opt.isValid = ${opt.isValid}`);
-      return isValid && isClassInstance && opt.isValid;
-    }, true);
-    if (allValid) {
-      select.options.push(...wrappedOpts);
-    } else {
-      throw new Error(`One or more options invalid!`);
-    }
-  }
-
-  /**
-   *  @private
-   */
-  [_validateAndAddOptionGroups](optionGroups, select) {
-    const wrappedOpts = optionGroups.map(grp => _.isPlainObject(grp) ? new SelectActionOptionGroup(grp) : grp);
-    const allValid = optionGroups.reduce((isValid, group) => {
-      const isClassInstance = group instanceof SelectActionOptionGroup;
-      return isValid && isClassInstance && group.isValid;
-    }, true);
-    if (allValid) {
-      select.option_groups.push(...wrappedOpts);
-    } else {
-      throw new Error(`One or more option groups invalid!`);
-    }
-  }
-
-  /**
    *  Pushes the working `attachment` onto the stack of attachments and then
    *  generates a new working attachment from the template.
    *
@@ -397,14 +254,9 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @private
    */
   [_addAttachment]() {
-    this[_attachments].push(this[_attachment]);
-    this[_attachment] = new Attachment();
-    return;
-    // if (this[_validate](this[_attachment])) {
-    if (this[_attachment].isValid) {
+    if (this[_validate](this[_attachment])) {
       this[_attachments].push(this[_attachment]);
-      // this[_attachment] = this[_template]();
-      this[_attachment] = new Attachment();
+      this[_attachment] = this[_template]();
       return true;
     } else {
       this._log.error(`Attachment JSON does not conform!`);
@@ -420,7 +272,7 @@ class AttachmentsBuilder extends Identifyable(Logable(Envable())) {
    *  @private
    */
   [_merge](source = {}) {
-    this[_attachment].merge(source);
+    Object.assign(this[_attachment], source);
     return this;
   }
 

@@ -1,0 +1,25 @@
+/**
+ *  Text inputs work well with concise free-form answers and inputs with unestablished bounds, such as
+ *  names, email addresses, or ticket titles if your form is used for something like a bug tracker.
+ *
+ *  @typedef {object} slackDialogTextElement
+ *  @property {string}  hint        Helpful text provided to assist users in answering a question.
+ *                                  Up to 150 characters.
+ *  @property {string}  label       Label displayed to user. Required. 24 character maximum.
+ *  @property {number}  max_length  Maximum input length allowed for element. Up to 150 characters.
+ *                                  Defaults to 150.
+ *  @property {number}  min_length  Minimum input length allowed for element. Up to 150 characters.
+ *                                  Defaults to 0.
+ *  @property {string}  name        Name of form element. Required. No more than 300 characters.
+ *  @property {boolean} optional    Provide `true` when the form element is not required. By default,
+ *                                  form elements are required.
+ *  @property {string}  placeholder A string displayed as needed to help guide users in completing
+ *                                  the element. 150 character maximum.
+ *  @property {string}  subtype     A subtype for this text input. Accepts `email`, `number`, `tel`, or `url`.
+ *                                  In some form factors, optimized input is provided for this subtype.
+ *  @property {string}  type        The type of form element. For a text input, the type is always `text`.
+ *                                  Required.
+ *  @property {string}  value       A default value for this field. Up to 500 characters.
+ *
+ *  @see https://api.slack.com/dialogs#text_elements
+ */

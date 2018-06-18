@@ -1,8 +1,8 @@
 {
-  "name": "slapps",
+  "name": "slackbot",
   "version": "1.0.0-5",
   "description": "",
-  "author": "Chris Smola",
+  "author": "Gloo Web Team",
   "private": true,
   "license": "UNLICENSED",
   "engines": {

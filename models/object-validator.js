@@ -81,13 +81,14 @@ class ObjectValidator extends Identifyable(Logable(Envable())) {
    *  @private
    */
   [_conformsTo](obj, template) {
+    console.log(obj);
     const objClone = _.clone(obj);
     const objKeys = Object.keys(obj);
     const templateKeys = Object.keys(template);
     const missingObjKeys = _.difference(templateKeys, objKeys);
     const loggedTemplate = {};
 
-    // this._log.json('keys:', { objKeys, templateKeys, missingObjKeys });
+    this._log.json('keys:', { objKeys, templateKeys, missingObjKeys });
     missingObjKeys.forEach(key => objClone[key] = null);
     // this._log.json('objClone:', objClone);
 

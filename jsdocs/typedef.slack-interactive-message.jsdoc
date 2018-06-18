@@ -1,0 +1,28 @@
+/**
+ *  @typedef {object} slackInteractiveMessage
+ *  @property {string}  text       The basic text of the message. Only required if the
+ *                                 message contains zero attachments.
+ *  @property {array.<attachment>} attachments Provide a JSON array of `attachment` objects.
+ *                                 Adds additional components to the message. Messages
+ *                                 should contain no more than 20 attachments.
+ *  @property {string}  thread_ts  When replying to a parent message, this value is the
+ *                                 `ts` value of the parent message to the thread.
+ *  @property {string}  response_type  Expects one of two values:
+ *    - `in_channel`: display the message to all users in the channel where a message button
+ *    was clicked. Messages sent in response to invoked button actions are set to `in_channel`
+ *    by default.
+ *    - `ephemeral`:  display the message only to the user who clicked a message button.
+ *    Messages sent in response to Slash commands are set to `ephemeral` by default.
+ *    This field cannot be specified for a brand new message and must be used only in response
+ *    to the execution of message button action or a slash command response. Once a
+ *    `response_type` is set, it cannot be changed when updating the message.
+ *  @property {boolean} replace_original  Used only when creating messages in response to a
+ *                                 button action invocation. When set to `true`, the inciting
+ *                                 message will be replaced by this message you're providing.
+ *                                 When `false`, the message you're providing is considered a
+ *                                 brand new message.
+ *  @property {boolean} delete_original  Used only when creating messages in response to a
+ *                                 button action invocation. When set to `true`, the inciting
+ *                                 message will be deleted and if a message is provided, it
+ *                                 will be posted as a brand new message.
+ */

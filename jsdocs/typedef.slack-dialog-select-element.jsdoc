@@ -1,0 +1,28 @@
+/**
+ *  Select menus are for multiple choice questions, and great for close-ended quantitative questions,
+ *  such as office locations, priority level, meal preference, etc. The select elements may contain
+ *  static menus or dynamically loaded menus specified with an optional data_source.
+ *
+ *  @typedef {object} slackDialogSelectElement
+ *  @property {string}  label            Label displayed to user. Required. No more than 24 characters.
+ *  @property {string}  name             Name of form element. Required. No more than 300 characters.
+ *  @property {string}  type             Set this to `select` for select elements.
+ *  @property {string}  data_source      Set this to either `users`, `channels`, `conversations`, or `external`.
+ *                                       Default value is `static`.
+ *  @property {string}  placeholder      A string displayed as needed to help guide users in completing
+ *                                       the element. 150 character maximum.
+ *  @property {boolean} optional         Provide `true` when the form element is not required. By default,
+ *                                       form elements are required.
+ *  @property {string}  value            A default value for static `select`, also, the data source types,
+ *                                       `users`, `channels`, and `conversations`. **This option is invalid in
+ *                                       `external`, where you must use `selected_options`.**
+ *  @property {string}  selected_options A default value for `external` only. (See `value`).
+ *  @property {array<slackDialogSelectOption>}   options Provide up to 100 options. Either `options` or
+ *                                                       `option_groups` is required for the `static`
+ *                                                       and `external`.
+ *  @property {array}   option_groups    An array of objects containing a `label` and a list of {@link slackDialogSelectOption}s.
+ *                                       Provide up to 100 option groups. Either `options` or `option_groups` is
+ *                                       required for the `static` and `external`.
+ *
+ *  @see https://api.slack.com/dialogs#select_elements
+ */

@@ -496,12 +496,3 @@ class Slack extends Configable(Logable(Identifyable(Envable()))) {
 
 
 module.exports = Slack;
-
-
-/**
- *  When slack makes options load requests, it expects a JSON response with
- *  an array of these options.
- *  @typedef {object} slackOptionsLoadOpts
- *  @property {string} text  Visible to the user.
- *  @property {string} value Used when processing response.
- */

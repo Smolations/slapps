@@ -1,0 +1,16 @@
+/**
+ *  All fields are required when using link buttons unless noted.
+ *
+ *  @typedef {object} attachmentActionButtonLink
+ *  @property {string} type    Provide `button` to tell Slack you want to render a button.
+ *  @property {string} text    A UTF-8 string label for this button. Be brief but
+ *                             descriptive and actionable.
+ *  @property {string} url     The fully qualified `http` or `https` URL to deliver users to.
+ *                             Invalid URLs will result in a message posted with the
+ *                             button omitted.
+ *  @property {string} [style] Setting to `primary` turns the button green and indicates
+ *                             the best forward action to take. Providing `danger` turns the
+ *                             button red and indicates it some kind of destructive action.
+ *                             Use sparingly. Be default, buttons will use the UI's default
+ *                             text color.
+ */

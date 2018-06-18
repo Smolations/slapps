@@ -5,8 +5,7 @@
   "recurseDepth": 10,
   "source": {
     "include": [
-      "./externals.jsdoc",
-      "./modules.jsdoc",
+      "./jsdocs",
       "./interfaces",
       "./mixins",
       "./models"

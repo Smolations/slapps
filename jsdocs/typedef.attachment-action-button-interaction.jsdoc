@@ -1,0 +1,26 @@
+/**
+ *  The `name` and `value` will be returned to your Action URL along with the message's
+ *  `callback_id` when the message button is clicked.
+ *
+ *  @typedef {object} attachmentActionButtonInteraction
+ *  @property {string} type    Provide `button` to tell Slack you want to render a button.
+ *  @property {string} name    Provide a string to give this specific action a name. **If
+ *                             multiple actions share the same name, only one of them can
+ *                             be in a triggered state.**
+ *  @property {string} text    The UTF-8 user-facing label for the message button. Cannot contain
+ *                             markup. Best to keep these short and decisive. Use a maximum
+ *                             of 30 characters or so for best results across form factors.
+ *  @property {string} value   Provide a UTF-8 string identifying this specific action. If
+ *                             providing multiple actions with the same `name`, `value` can be
+ *                             strategically used to differentiate intent. Your value may contain
+ *                             up to **2000** characters.
+ *  @property {string} [style] Setting to `primary` turns the button green and indicates
+ *                             the best forward action to take. Providing `danger` turns the
+ *                             button red and indicates it some kind of destructive action.
+ *                             Use sparingly. Be default, buttons will use the UI's default
+ *                             text color.
+ *  @property {attachmentActionConfirmation} [confirm] If you provide a JSON hash of confirmation
+ *                             fields, your button or menu will pop up a dialog with your
+ *                             indicated text and choices, giving them one last chance to avoid
+ *                             a destructive action or other undesired outcome.
+ */

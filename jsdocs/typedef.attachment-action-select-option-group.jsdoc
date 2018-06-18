@@ -1,0 +1,9 @@
+/**
+ *  @typedef {object} attachmentActionSelectOptionGroup
+ *  @property {string} text A short, user-facing string to label this option to users.
+ *                          Use a maximum of 30 characters or so for best results across,
+ *                          you guessed it, form factors.
+ *  @property {array.<attachmentActionSelectOption>} options The individual options to
+ *                          appear in this message menu, provided as an array of option fields.
+ *                          Required when `data_source` is `default` or otherwise unspecified.
+ */

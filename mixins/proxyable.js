@@ -90,18 +90,18 @@ class extends SuperClass {
 
     const proxyHandler = {
       get(target, propName) {
-        // console.log(`Proxyable#get:  ${target.constructor.name}.${propName.toString()}`)
+        console.log(`Proxyable#get:  ${target.constructor.name}.${propName.toString()}`)
         const targetHasProp = Reflect.has(target, propName);
         if (!targetHasProp) {
           if (Reflect.has(proxy, propName)) {
-            // console.log('Proxyable#get:  getting value from proxied');
+            console.log('Proxyable#get:  getting value from proxied');
             if (_.isFunction(proxy[propName])) {
               return proxy[propName].bind(proxy);
             }
             return proxy[propName];
           }
         }
-        // console.log('Proxyable#get:  getting value from instance');
+        console.log('Proxyable#get:  getting value from instance');
         return target[propName];
       },
 
@@ -123,6 +123,19 @@ class extends SuperClass {
         }
         return true;
       },
+
+      ownKeys(target) {
+        console.log('calling ownKeys');
+        const targetKeys = Object.keys(target); console.log('targetKeys: ', targetKeys);
+        const jsonKeys = Object.keys(target._json); console.log('jsonKeys: ', jsonKeys);
+        console.log('ownKeys returning: ', targetKeys.concat(jsonKeys));
+        return targetKeys.concat(jsonKeys);
+      },
+
+      has(target, propName) {
+        console.log(`trap .has(${target}, ${propName})`);
+        return !!target[propName];
+      }
 
       // apply(target, thisArg, argumentsList) {
       //   console.log('proxying apply call...');

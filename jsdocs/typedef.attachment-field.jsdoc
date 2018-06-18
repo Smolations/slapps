@@ -1,0 +1,14 @@
+/**
+ *  The name may be misleading, as this type is only for displaying data.
+ *
+ *  @typedef {object} attachmentField
+ *  @property {string} title          Shown as a bold heading above the value text.
+ *                                    It cannot contain markup and will be escaped
+ *                                    for you.
+ *  @property {string} value          The text value of the field. It may contain
+ *                                    standard message markup and must be escaped
+ *                                    as normal. May be multi-line.
+ *  @property {boolean} [short=false] An optional flag indicating whether
+ *                                    the value is short enough to be displayed
+ *                                    side-by-side with other values.
+ */

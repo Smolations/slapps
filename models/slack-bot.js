@@ -241,11 +241,3 @@ class SlackBot extends Identifyable(Logable(Envable())) {
 
 
 module.exports = SlackBot;
-
-
-/**
- *  Subscribers are the main containers for access to parts of the nectarbot
- *  ecosystem. The parameters they receive define that access.
- *  @typedef {object} subscriberOpts
- *  @property {string} env Passing through the environment to subscribers
- */

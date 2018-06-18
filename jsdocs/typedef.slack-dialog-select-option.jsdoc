@@ -1,0 +1,7 @@
+/**
+ *  @typedef {object} slackDialogSelectOption
+ *  @property {string} label Text visible to the user. 75 characters maximum.
+ *  @property {string} value Value uses for server interaction. 75 characters maximum.
+ *
+ *  @see https://api.slack.com/dialogs#select_elements
+ */

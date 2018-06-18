@@ -1,0 +1,17 @@
+/**
+ *  @typedef {object} slackDialog
+ *  @property {string} title        User-facing title of this entire dialog. 24 characters to work
+ *                                  with and it's required.
+ *  @property {string} callback_id  An identifier strictly for you to recognize submissions of this
+ *                                  particular instance of a dialog. Use something meaningful to your
+ *                                  app. 255 characters maximum. Absolutely required.
+ *  @property {array.<*>} elements  Up to 5 form elements are allowed per dialog. Any combination of
+ *                                  {@link slackDialogTextElement}, {@link slackDialogTextareaElement},
+ *                                  or {@link slackDialogSelectElement}. Required.
+ *  @property {string} [submit_label='Submit'] User-facing string for whichever button-like thing submits the form,
+ *                                  depending on form factor. Defaults to `Submit`, localized in whichever
+ *                                  language the end user prefers. 24 characters maximum, and may
+ *                                  contain only a single word.
+ *  @property {boolean} [notify_on_cancel=false] Whether or not slack should notify the bot that the
+ *                                  cancel button has been clicked.
+ */
